@@ -1,14 +1,89 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[
+  normalmargins,
+  10pt,
+  openany,
+  onehalfspacing,
+]{my-format}
+% packages
+\usepackage[colorlinks]{hyperref} % for links
 
-\title{NLSE_primer}
-\author{ole.krarup.dk }
-\date{July 2024}
+\usepackage{acro}
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\input{Acronyms}
+
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx} % for embedding graphics
+\usepackage{booktabs} % for pretty tables
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18,width=11cm}
+\usetikzlibrary{math}
+\usepackage[all]{nowidow}
+\usepackage{pdflscape}
+\usepackage[final]{pdfpages}
+\usepackage{afterpage}
+\usepackage[nottoc]{tocbibind}
+\newcommand{\degs}{^{\circ}}
+\newcommand{\inv}{$^{-1}$}
+
+
+% author data
+\author{Ole Krarup}
+\title{\Large A primer on the Nonlinear Schr{\"o}dinger Equation }
+
+% reference database
+
+
 
 \begin{document}
-
-\maketitle
-
-\section{Introduction}
-
+ 
+  \frontmatter    
+        
+    \maketitle
+    \addtocounter{page}{1}
+    
+   
+   
+    \addcontentsline{toc}{chapter}{Table of Contents}
+    \tableofcontents
+    
+    \listoffigures
+    \listoftables
+    
+    \input{AcronymList}
+    
+    
+    \printacronyms
+    \addcontentsline{toc}{chapter}{List of Acronyms}
+    \mainmatter
+    
+    \pagestyle{plain}
+    \input{ch-intro}
+    \input{ch-math}
+    \input{ch-dispersion}
+    \input{ch-spm}
+    \input{ch-FWM}
+    \input{ch-solitons}
+    \input{ch-SS}
+    \input{ch-Raman}
+    \input{ch-supercontinuum}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  %\appendix
+    %\input{ap-code}
+  \backmatter
+  \bibliographystyle{unsrturl}%plainurl
+  \bibliography{refs.bib}
+  
 \end{document}
