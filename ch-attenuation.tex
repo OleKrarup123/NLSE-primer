@@ -1,0 +1,110 @@
+\chapter{Attenuation and Gain}
+\label{ch:attenuation}
+
+REWORK PHYSICAL EXPLANATION!!!
+
+Light propagating through a glass medium will naturally experience attenuation as impurities or lattice defects can scatter part of the electromagnetic field away from the original direction of propagation. Because nonlinear optical effects become less significant if the intensity of the light is low, understanding the impact of attenuation is important for understanding Eq.~\ref{eq:GNLSE}.
+
+
+\section{Physical origins of attenuation}
+When light propagates in a waveguide, such as an optical fiber, attenuation can occur due to chemical impurities in the glass, crystal defects in the lattice or tight bends in the waveguide. Additionally, if the carrier frequency of the light matches the vibration frequency of a chemical bond in the crystal lattice, light can be converted directly into heat. See \href{https://www.youtube.com/watch?v=QCX62YJCmGk&list=PLZHQObOWTQDMKqfyUvG2kTlYt-QQ2x-ui}{this video series} for an intuitive picture of how light propagates through an ideal medium. Note that each atom excited by an electromagnetic plane wave emits radiation in a dipole pattern, which is very different from a plane wave. It is only the interference of many dipoles excited in the same way that results in the combined field propagating like a plane wave. A dipole at one location oscillating at a different amplitude or phase than its neighbours will interfere differently with all the others and send part of the electromagnetic field in a different direction. 
+
+
+\section{Describing attenuation}
+
+Consider Eq.~\ref{eq:GNLSE} where all parameters except for $\alpha$ is equal to zero. In that case,
+
+\begin{align}
+    \label{eq:attenuation}
+    \partial_z\A &= \frac{\alpha}{2} \A \\ \nonumber
+    \A(z,t)&=\A(0,t)\exp\left( \frac{\alpha}{2}z \right). 
+\end{align}
+When $\alpha<0$, Eq.~\ref{eq:attenuation} implies that the field will attenuate with distance, while $\alpha>0$ implies that the field experiences gain. Note that the power of the field is proportional to the absolute square of the field, so
+\begin{align}
+    \label{eq:attenuation_power}
+    P(z,t)=|\A(z,t)|^2&=|\A(0,t)|^2 \exp\left( \alpha z \right). 
+\end{align}
+In Eq.~\ref{eq:GNLSE}, Eq.~\ref{eq:attenuation} and Eq.~\ref{eq:attenuation_power}, $\alpha$ is the "power attenuation coefficient", which tells you by how many factors of $e$ the \emph{power} of the field has changed after propagating a certain distance. Other authors define $\alpha$ to be the "field attenuation coefficient", which tells you by how many factors of $e$ the \emph{field} has changed after propagating a certain distance, in which case Eq.~\ref{eq:attenuation_power} would contain $2\alpha z$ in the exponential instead of $\alpha z$. 
+
+\section{The dB scale}
+\begin{table}[]
+    \centering
+    \begin{tabular}{ c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c }
+\label{tab:dB}
+ Scaling factor &0.01&0.05 & 0.1 &0.125 &0.25&0.4 &0.5 & 0.8&1&1.25 &2 &2.5 &4 &8 &10 &20 & \\  \hline
+ dB change & -20 &-13 &-10 & -9&  -6&-4& -3&-1&0&1 &3 &4 &6 &9 & 10&13 
+\end{tabular}
+    \caption{Examples of scaling factors and corresponding changes measured in dB.}
+    \label{tab:dB}
+\end{table}
+In practical applications, it's common to report attenuation or gain in units of "Decibels" (dB). For example, if a signal initially has 60~mW of power and only, 130~$\mu$W after propagating through a medium, its power has changed by
+\begin{align}
+    \Delta P [dB] &= 10 \log_{10}\left(\frac{P_{final}}{P_{initial}} \right)= 10 \log_{10}\left(\frac{0.130 mW}{60 mW} \right) = -26.64 dB.
+\end{align}
+Conversely, if the power is then boosted by 15dB, the new power is
+\begin{align}
+\label{eq:boost}
+    P_{final}&=P_{initial}\cdot10^{\frac{\Delta dB}{10}}=0.13mW\cdot10^{\frac{15}{10}} = 4.11 mW.
+\end{align}
+
+
+Note that $10\log_{10}(10)=10$~dB, $10\log_{10}(0.1)=-10$~dB, $10\log_{10}(2)\approx3$~dB and $10\log_{10}(0.5)\approx-3$~dB. Thus, if the power is scaled up by a factor of $20=10\cdot 2$, this corresponds to an increase by $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$dB. See Tab.~\ref{tab:dB} for more examples. 
+
+The attenuation coefficient, $\alpha$ is often reported in dB/km. For example, single-mode optical fibers for telecommunications  have typical attenuation coefficients of $-0.22$dB/km near 193~THz (corresponding to approximately 1550~nm). This implies that a 100km long fiber will change the optical power by $-22$~dB, which corresponds to a reduction by a factor of approximately 158.5. If $\alpha=-0.22$dB/km, the appropriate value of $\alpha$ measured in "factors of e per km" to use in Eq.~\ref{eq:GNLSE} (assuming that $z$ is measured in units of km) can be calculated from
+\begin{align}
+    \exp\left(\alpha_{\text{Factors of $e$ per km}}z\right) &= 10^{ \frac{\alpha_{dB/km}}{10}z} \\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}}z &= \ln\left(10^{ \frac{\alpha_{dB/km}}{10}z} \right)\\ \nonumber
+    &= \frac{\alpha_{dB/km}}{10}z \ln(10)\\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}} &= 0.23\cdot \alpha_{dB/km}\\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}}\cdot4.343&=\alpha_{dB/km}.
+\end{align}
+
+
+\section{Measuring power in dBm}
+The powers of optical signals are often reported in units of "dBm", which represents the power in decibels relative to "mW". For example, 40~mW corresponds to
+\begin{align}
+    P [dBm] &= 10\cdot\log_{10}\left(\frac{40mW}{1mW} \right)=16dBm,
+\end{align}
+and conversely,
+\begin{align}
+    \label{eq:dBm_rev}
+    P [mW] &= 10^{\frac{16dBm}{10}}mW=40mW.
+\end{align}
+
+
+Using "dBm" is convenient as weak signals that are nevertheless detectable can be a few nW, while the peak powers of pulses that have undergone, for example, \href{https://youtu.be/Eh5CHRWFT-M}{chirped pulse amplification} can reach MW or even GW. It also makes accounting for the impact of attenuation and gain easier than using Eq.~\ref{eq:boost} because a signal with an initial power of $0.13$~mW=$-8.86$~dBm, which gets amplified by 15~dB will have a final power of $-8.86~dBm+15~dB=6.13$~dBm.    
+
+
+\section{Common dB and dBm mistakes}
+
+\begin{enumerate}
+    \item \textbf{Adding dBm to dBm}: Alice wants to determine the total power of two lasers in dBm. She measures the power of the first laser to be 3dBm and the power of the second laser to be 6dBm.  
+    \begin{itemize}
+    \item[\redcross] Alice calculates $P_{tot} [dBm] = 3dBm + 6dBm = 9dBm$. This is wrong because 3~dBm = 2~mW and 6~dBm=4~mW, but 9~dBm = 8~mW and because adding dBm values directly corresponds to multiplying the powers measured in linear units: $2~mW\cdot4~mW = 8~mW^2$!
+    \item[\greencheck] Alice first converts the two measurements to linear units (3~dBm=2~mW, 6~dBm = 4~mW). She then adds the linear values to obtain a total power of 6~mW and finally converts this result to dBm: $10\cdot\log_{10}(6mW/1mW)=7.78~dBm$.
+    \end{itemize}
+
+    \item \textbf{Confusing dB and dBm}: Bob, wants to know the power of a certain laser in mW. A colleagues of his reports that he has measured the power to be "13~dB".   
+    \begin{itemize}
+    \item[\redcross] Bob plugs the value of $13~dB$ into Eq.~\ref{eq:dBm_rev} instead of $16~dBm$ and gets the result $20~mW$. This is wrong because "13~dB" is a unitless ratio and not a measure of power!   
+    \item[\greencheck] Bob asks his colleague to clarify if he actually meant "13~dBm". The colleague may simply have misspoken, but it's also possible that the display on his power meter actually did say "13~dB" because it was accidentally set to report the current power compared to some previously specified value.
+    \end{itemize}
+
+   \item \textbf{More confusion of dB and dBm}: Charlie has measured the power of a laser to be 10~dBm. His colleague asks him to reduce the power by "3~dBm".    
+    \begin{itemize}
+    \item[\redcross] Charlie adjusts the output power from 10~dBm down to 7~dBm. This is wrong because he has cut the power by 3~dB, while a reduction by "3~dBm" would correspond to 2~mW.  
+    \item[\greencheck] Charlie asks his colleague to clarify if she meant 3~dB or actually did request a reduction by 2~mW. The former is the most likely situation as the latter (while strictly speaking not incorrect) would be unconventional and potentially confusing use of terminology.  
+    \end{itemize}
+    
+    \item \textbf{Incorrect averaging}: David wants to determine the average power in dBm of three lasers whose individual powers are -1~dBm, 4~dBm and 6~dBm.     
+    \begin{itemize}
+    \item[\redcross] David computes $P_{avg}=(-1~dBm+4~dBm+6~dBm)/3=4dBm$. Doing so does not yield the "regular" average, but the \href{https://en.wikipedia.org/wiki/Geometric_mean}{geometric average} of the three values: $(-1~dBm+4~dBm+6~dBm)/3 = (0.79~mW\cdot2.51~mW\cdot7.94~mW)^{1/3}=2.5~mW = 4dBm$. This value can be informative in some situations, but it's not the "regular average" that David is currently interested in! Verifying that power averages are computed consistently is important, for example when a big team is working on characterizing the performance of an optical product they wish to sell!  
+    \item[\greencheck] David converts the three powers to linear units, and computes the average as $(0.79~mW+2.51~mW+7.94~mW)/3=3.75~mW=5.74~dBm$.  
+    \end{itemize}
+    
+ 
+    
+\end{enumerate}
+
+
+

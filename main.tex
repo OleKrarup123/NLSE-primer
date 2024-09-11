@@ -6,11 +6,23 @@
 ]{my-format}
 % packages
 \usepackage[colorlinks]{hyperref} % for links
-
+\usepackage[dvipsnames]{xcolor}
 \usepackage{acro}
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
 \input{Acronyms}
+
+\newcommand{\A}{\textcolor{red}{A}} 
+\newcommand{\E}{\textcolor{red}{E}} 
+\newcommand{\greencheck}{\textcolor{green}{\checkmark}}
+\newcommand{\redcross}{\textcolor{red}{x}}
+
+
+\newcommand{\betag}{\textcolor{ForestGreen}{\beta}} 
+\newcommand{\CITE}{\textcolor{magenta}{CITE?!?!?!?!?!}} 
+\newcommand{\real}{\mathfrak{Re}}
+\newcommand{\FT}{\mathfrak{F}}
+\newcommand{\IFT}{\mathfrak{F}^{-1}}
 
 
 
@@ -26,6 +38,8 @@
 \usepackage[final]{pdfpages}
 \usepackage{afterpage}
 \usepackage[nottoc]{tocbibind}
+\usepackage{amssymb}
+
 \newcommand{\degs}{^{\circ}}
 \newcommand{\inv}{$^{-1}$}
 
@@ -53,22 +67,23 @@
     \listoffigures
     \listoftables
     
-    \input{AcronymList}
+    %\input{AcronymList}
+    %\printacronyms
+    %\addcontentsline{toc}{chapter}{List of Acronyms}
     
-    
-    \printacronyms
-    \addcontentsline{toc}{chapter}{List of Acronyms}
     \mainmatter
     
     \pagestyle{plain}
     \input{ch-intro}
     \input{ch-math}
+    \input{ch-attenuation}
+
     \input{ch-dispersion}
     \input{ch-spm}
     \input{ch-FWM}
-    \input{ch-solitons}
-    \input{ch-SS}
     \input{ch-Raman}
+
+    \input{ch-solitons}
     \input{ch-supercontinuum}
     
     

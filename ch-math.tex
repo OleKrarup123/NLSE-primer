@@ -5,13 +5,120 @@ This chapter will explain the basic mathematical tools needed for understanding 
 
 
 \section{Real and Complex fields}
+%Explain that the real field is what determines how an electron moves and that the complex one is only used for mathematical convenience when dealing with phase shifts.
+A particle with a charge, $q$, and mass, $m$, which is subjected to an electric field $\Bar{\E}_r =\E_r \hat{x}$ will experience an acceleration given by
+\begin{align}
+    \Bar{a} &=  \frac{q\E_r}{m}\hat{x}.
+\end{align}
+The subscript, $r$, on the electric field indicates that this is the "real" electric field which determines how charged particles accelerate as opposed to the "complex" electric field, which should be thought of as a mathematical tool that makes calculations involving electromagnetic waves easier and from which the real electric field can always be recovered. For example, the real electric field wave propagating through a bulk medium, where its spatial angular frequency, $\betag$, depends on the temporal angular frequency, $\omega$, is given by  
+\begin{align}
+\label{eq:real_field}
+    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \\\nonumber 
+     &=|\E_0| \real\left\{  \exp\left( i\betag(\omega)z-i\omega t+i\phi \right) \right\} \\ \nonumber 
+     &= \real\left\{ \E_0 \exp\left( i\betag(\omega)z-i\omega t\right) \right\}  \\ \nonumber
+     &= \real\left\{ \E(z,t) \right\}  \\ \nonumber
+     &=  \frac{1}{2}\left( \E(z,t) + \E^*(z,t) \right).   
+\end{align}
+For an illustration of Eq.~\ref{eq:real_field}, see \href{https://www.desmos.com/calculator/fgvozursrl}{this interactive graph}. 
 
-\section{Phase, Chrip and Delay}
+Use of the complex electric field is convenient when modelling the effects of phase shifts and interference. For example, to introduce a phase shift of $\phi_0$ into the real field, it must be "inserted manually" by writing
+\begin{align}
+\label{eq:insert_phase}
+    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \Rightarrow \\ \nonumber \E_r'(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi+\phi_0^{\textcolor{Red}{\swarrow}}\right).   
+\end{align}
+Using the complex field, the same operation can be done by using complex multiplication, since
+\begin{align}
+\label{eq:insert_phase_complex}
+    \E(z,t) &=\E_0 \exp\left( i\betag(\omega)z-i\omega t+ i\phi\right)\Rightarrow \\ \nonumber \E'(z,t) &=  \E_0 \exp\left( i\betag(\omega)z-i\omega t +i\phi\right)\exp\left( i\phi_0\right) \\ \nonumber
+    &=\E_0 \exp\left( i\betag(\omega)z-i\omega t +i\phi+ i\phi_0\right) \\ \nonumber
+    \E_r'(z,t) &= \real\left\{  \E'(z,t)   \right\}. 
+\end{align}
 
-\section{Convolution?}
+Additionally, since the instantaneous power of an oscillating, real electric field is proportional to its square, the average power over one cycle can either be computed from an integral or from half of the absolute square of the complex electric field,
+\begin{align}
+\label{eq:average_power}
+    \langle \E_r^2 \rangle_T&= \frac{1}{T}\int_{0}^{T} \E_r^2 dt = \langle\real\left\{\E\right\}^2\rangle_T =\frac{1}{4}\langle\left(\E+\E^*\right)^2\rangle_T\\ \nonumber
+&=\frac{1}{4}\langle \E^2+\E^{*2}+2|\E|^2 \rangle_T=\frac{1}{2} \langle|\E|^2\rangle_T=\frac{1}{2}|\E|^2.
+\end{align}
+The convenience of replacing both "manual insertion" and integrals by complex multiplication is great enough that doing calculations using the complex electric field and only extracting the real field in the very end is worthwhile. Therefore, this primer primarily utilizes complex fields, but emphasizes that these are only useful mathematical abstractions, while the real fields have physical significance as they directly determine the acceleration of charges.  
 
-\subsection{Theoretical FBG model}
+\subsection{Actual electric field and the electric field envelope}
+Radio signals used for Wi-Fi have carrier frequencies of around 5~GHz, while state of the art oscilloscopes can measure fields oscillating at 100~GHz. For comparison, the electric fields of laser pulses typically oscillate at carrier frequencies above 100~THz. Therefore, doing calculations with and expressing results in terms of the actual, complex electric field, $\E(z,t) =\E_0 \exp\left( i\betag(\omega_0)z-i\omega_0 t\right)$, is often inconvenient because the fast electric field oscillations occurring $\omega_0/2\pi$ times per second cannot be detected anyways. Instead, one can define the envelope of the complex electric field as
+\begin{align}
+\label{eq:envelope}
+    \A(z,t) &=a\cdot\E(z,t)\cdot e^{-i(\betag(\omega_0)z-\omega_0t)},
+\end{align}
+and use it for calculations instead. The constant, $a=\sqrt{0.5\epsilon_0ncA_{eff}}$, where $\epsilon_0$ is the vacuum permittivity, $n$ is the refractive index of the medium, $c$ is the speed of light and $A_{eff}$ is the effective area of the cross-section of the optical field. Scaling $E$ by $a$ ensures that $\A$ has units of $\sqrt{W}$, which is convenient for calculations. By "factoring out" the rapid and undetectable but also \emph{predictable} temporal and spatial oscillations, determining how the electric field \emph{changes} due to linear and non-linear effects becomes easier. See \href{https://www.desmos.com/calculator/rsw2fn5af6 }{this interactive graph} for an illustration of the difference between $\E$ and $\A$. 
+
+
+
+\section{Fourier Transform}
+%Define the Fourier Transform so going from time to frequency and back is well-behaved. 
+
+In this primer, the Fourier transform and its inverse will respectively be defined as
+\begin{align}
+    \Tilde{\E}(z,\omega) &= \FT\left\{\E(z,t)\right\} = \int_{-\infty}^{\infty} \E(z,t) e^{i\omega t} dt, \\ \nonumber
+    \E(z,t) &= \IFT\left\{\Tilde{\E}(z,\omega)\right\} = \frac{1}{2\pi} \int_{-\infty}^{\infty} \Tilde{\E}(z,\omega) e^{-i\omega t} d\omega.
+\end{align}
+The convention of using $\exp(i\omega t)$ in the Fourier transform as opposed to $\exp(-i\omega t)$ is chosen because complex plane wave propagating in the forward z-direction are described by $\exp(i\beta(\omega_0)z-i\omega_0 t)$. Thus, the calculation,
 
 \begin{align}
-    \nabla^{2}\tilde{\boldsymbol{E}}+\frac{\omega^{2}}{c^{2}}\tilde{\boldsymbol{E}}+\text{\ensuremath{\mu_{0}}}\omega^{2}\tilde{\boldsymbol{P}}&=0,
+    \FT\left\{\exp(i\beta(\omega_0)z-i\omega_0 t)\right\} &= \int_{-\infty}^{\infty} e^{i\beta(\omega_0)z-i\omega_0 t} e^{i\omega t} dt, \\ \nonumber
+      &= \int_{-\infty}^{\infty} e^{i\beta(\omega_0)z-i(\omega_0-\omega) t} dt \\ \nonumber
+      &= e^{i\beta(\omega_0)z}\delta(\omega-\omega_0),
+\end{align} 
+shows that the Fourier transform of a complex plane wave yields a delta function centered at the positive carrier frequency of the complex plane wave. Using $\exp(-i\omega t)$ in the Fourier transform and applying it to a complex plane wave propagating in the positive z-direction would have yielded a result containing $\delta(\omega_0+\omega)$, implying that the delta function is centered at the negative carrier frequency. The latter approach makes accounting for the sign in calculations involving the Fourier transform of complex plane waves propagating in the z-direction more complicated. Therefore the former convention is used. 
+
+\section{Pulses}
+Electromagnetic pulses with a finite duration in a medium can be viewed as an infinite sum of distinct complex plane waves as follows
+\begin{align}
+    \label{eq:pulse}
+    \E(z,t) &= \frac{1}{2\pi}\int_{-\infty}^{\infty} |\Tilde{\E}(z,\omega)| e^{i\betag(z,\omega)z-i\omega t+i\phi(z,\omega)} d\omega \\ \nonumber
+    \E(z,t) &= \frac{1}{2\pi}\int_{-\infty}^{\infty} \Tilde{\E}(z,\omega) e^{i\betag(z,\omega)z-i\omega t} d\omega
 \end{align}
+The crucial insight provided by Eq.~\ref{eq:pulse} is that any change in the intensity, shape and color of an optical signal must arise from altering the amplitudes, $|\Tilde{\E}(z,\omega)|$, phases, $\phi(z,\omega)$, or spatial frequencies, $\betag(z,\omega)$, of a set of temporal frequency components. Even nonlinear effects, which can alter laser pulses in surprising ways, essentially do nothing more than alter these three parameters. 
+
+
+
+\section{Chrip and Delay}
+%Highlight that how the phase changes with time determines instantaneous frequency, which is super important for understanding pulse evolution. Explain that the change in phase w.r.t. frequency determines the time shift for each frequency.
+Consider the complex electric field at $z=0$ given by
+\begin{align}
+\label{eq:chirp_example}
+    a\E(t) &= \A(t)\exp\left(  -i\left(\omega_0 +\frac{C}{2}T \right)T   \right).
+\end{align}
+If $C=0$, the phase of the field changes linearly, which implies that it oscillates with a fixed carrier frequency of $\omega_0$. If $C>0$, Eq.~\ref{eq:chirp_example} suggests that the carrier frequency will increase over time, while $C<0$ would imply that the carrier frequency decreases. See \href{https://www.desmos.com/calculator/gd7s8nhfdn}{this interactive graph} for an illustration. In general, we can define the "instantaneous angular frequency" of an electric field as
+\begin{align}
+\label{eq:chirp_definition}
+    \delta\omega(T) &= -\partial_T\phi(T),
+\end{align}
+where $\phi(T)$ is the phase of the field as a function of time. The negative in front of the derivative w.r.t. time is included to ensure that the instantaneous angular frequency of a complex plane wave propagating in the z-direction, which is described by $\exp(i\beta(\omega_0)z-i\omega_0 t)$, is correctly calculated to be $+\omega_0$.
+
+An electric field whose instantaneous frequency changes over time is said to be "chirped". Durations, where it oscillates at a frequency lower(higher) than its carrier frequency are said to be "red-chirped"("blue-chirped"). A chirp that changes from "red" to "blue", is said to be "increasing", while a chirp that changes from "blue" to "red" is said to be "decreasing". 
+
+Understanding that different durations of a known field can have different instantaneous frequencies, and that these frequencies can be obtained from Eq.~\ref{eq:chirp_definition} by computing the negative derivative of the phase of the field is crucial to making sense of a number of linear and nonlinear effects. For example, if the speed of light in a particular medium is such that higher frequencies (i.e. "more blue" ones) propagate faster than lower frequencies (i.e. "more red" ones), an optical pulse propagating through this material will develop a blue chirp in the front and a red chirp in the back. 
+
+Just as taking the derivative of the temporal phase w.r.t. time yields information about the instantaneous frequency, one can take the derivative of the spectral phase w.r.t. frequency to determine the time delay of a particular frequency. Consider the spectrum of the complex field envelope at $z=0$ given by
+\begin{align}
+\label{eq:spectrum_time_example}
+    \Tilde{\A}(\omega) &= \Tilde{\A}_0(\omega)\exp\left( i\left(\frac{B}{2}(\omega-\omega_0)^2 \right)   \right).
+\end{align}
+Assuming $B>0$, Eq.~\ref{eq:spectrum_time_example} implies that the phases of the frequency components surrounding the carrier angular frequency, $\omega_0$, increase quadratically with increasing separation from the carrier. Alternatively, one can interpret Eq.~\ref{eq:spectrum_time_example} as stating that the phase \emph{decreases} for angular frequencies below $\omega_0$ and \emph{increases} for angular frequencies above $\omega_0$. Inspired by Eq.~\ref{eq:chirp_definition}, we can compute
+
+\begin{align}
+\label{eq:delay_definition}
+    \delta t(\omega) &= \partial_\omega\phi(\omega),
+\end{align}
+which for Eq.~\ref{eq:spectrum_time_example} yields
+\begin{align}
+    \delta t(\omega) &=  B(\omega-\omega_0),
+\end{align}
+which suggests that angular frequencies below $\omega_0$ experience a negative time shift (causing them to occur earlier), while angular frequencies above $\omega_0$ experience a positive time shift (equivalent to a delay). Note that no change of sign is required in Eq.~\ref{eq:delay_definition} to achieve consistency. 
+
+Compared to Eq.~\ref{eq:chirp_definition}, Eq.~\ref{eq:delay_definition} is less useful for calculations, but the insight that decreasing phase w.r.t. angular frequency implies an early arrival time, while an increasing phase w.r.t. angular frequency implies delayed arrival is helpful when the impact of dispersion is analyzed in Ch.~\ref{ch:Dispersion}. See also \href{https://youtu.be/E3S0BQiy3p8}{this video tutorial} for an illustration of the relationship between changing spectal phase and time delay.  
+ 
+
+
+
+
+

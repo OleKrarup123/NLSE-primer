@@ -1,14 +1,19 @@
 \chapter{Introduction}
 \label{ch:Introduction}
-
-Quick explanation of the purpose of this primer: Explain the basics of the NLSE with much more hand-holding than Agrawal but fewer advanced details. Remember to cite! Stick to basic 1D version to provide intuitive understanding of different effects that will help the reader to understand more advanced 2D effects.  
-
-Explain that phenomena labelled SPM, XPM etc. should be thought of as a "taxonomy"; i.e. they are not "really" distinct. Rather the Kerr effect causing a power-dependent phase shift is the fundamental effect and the sub-effects are just simplified special cases.  
-
-\section{FBG based sensors}
-
-\subsection{Theoretical FBG model}
+The Nonlinear Schr{\"o}dinger Equation (NLSE) in its generalized, scalar form describes how the normalized envelope $\A =\A(z,T)$ of the complex electric field $\E= \E(z,T) = \E_0\cdot \exp(-i(\betag(\omega_0)z-\omega_0T))$, oscillating with a carrier angular frequency $\omega_0$ and carrier spatial frequency $\betag(\omega_0)$, evolves as it propagates through a medium, where attenuation, dispersion and a $\chi^{3}$ nonlinearity are present. Mathematically, it is given by
 
 \begin{align}
-    \nabla^{2}\tilde{\boldsymbol{E}}+\frac{\omega^{2}}{c^{2}}\tilde{\boldsymbol{E}}+\text{\ensuremath{\mu_{0}}}\omega^{2}\tilde{\boldsymbol{P}}&=0,
+    \label{eq:GNLSE}
+    \partial_z \A = \frac{\alpha}{2}\A+i \sum_{n=2}^{\infty}i^n \frac{\betag_n}{n!}\partial_T^n\A  + i\gamma\left(1+\frac{i}{\omega_0}\partial_T  \right)\left( 
+\A \int_{0}^{\infty} R(T_{delay})|\A(z,T-T_{delay})|^2 dT_{delay} \right),
 \end{align}
+where $\alpha$ is the power attenuation/gain coefficient, $\betag_n=\partial_\omega^n\betag(\omega)|_{\omega=\omega_0}$ are the coefficients of the Taylor expansion of the spatial frequency evaluated at $\omega = \omega_0$,  $\gamma$ is the nonlinearity parameter and $R(T_{delay})$ is the temporal response function of the nonlinearity at a time delay, $T_{delay}$, before the present time, $T$. Solving Eq.~\ref{eq:GNLSE} allows one to describe supercontinuum generation~\cite{supercontinuum_original_paper,NLSE_original}, solitons~\cite{soliton_first_theory,Soliton_experimental_first}, nonlinear noise in fiber telecommunications systems~\cite{poggiolini2014detailedanalyticalderivationgn} and other exotic optical phenomena with a plethora of scientific and industrial applications. 
+
+\section{Goal}
+This primer explores the constituent terms of Eq.~\ref{eq:GNLSE} and their interactions in a way that aims to develop an intuitive understanding of the mathematics and the underlying physics. To achieve this goal, discussions of more complicated effects, such as those involving the polarization of light, are omitted in favour of more detailed derivations and examples of purely scalar effects. Hopefully, this approach provides the reader, with the basic tools needed for analyzing common experimental results in nonlinear optics and tackling more advanced resources, papers and textbooks on the topic. 
+
+\section{Citation Policy}
+Since the ultimate goal is to advance and deepen the reader's understanding, this primer will both cite the original academic works on the explored topics, and link to items such as YouTube videos, personal web pages, online encyclopedia entries, forum questions, interactive tools and similar material produced by hobbyists and professional researchers alike. The aim is to both provide the reader with a starting point for a comprehensive review of the formal literature necessary for independently writing a paper or thesis on nonlinear optics and a collection of high-quality, accessible explanations of relevant topics both within and adjacent to the scope of this primer. 
+
+\subsection{On citing this primer}
+This primer contains no original research on the NLSE and should be viewed as a collection of detailed notes. When writing a paper or thesis presenting new research on the NLSE, it is recommended that the oldest original works on relevant aspects of it, such as~\cite{soliton_first_theory} and~\cite{Soliton_experimental_first} in the case of solitons are referenced preferentially before this primer. However, if the aim is simply to familiarize readers with the NLSE to help them grasp original research on it, this primer can be cited as 
