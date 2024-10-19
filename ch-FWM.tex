@@ -1,24 +1,30 @@
 \chapter{Four Wave Mixing}
 \label{ch:FWM}
 
-The average power of a single frequency of calculated from Eq.~\ref{eq:average_power} will be constant over time. If two frequencies are present, their interference will cause the average power to vary sinusoidally over time. Since $\gamma\neq0$ implies that the refractive index depends on power, the simultaneous presence of two frequencies of light in a nonlinear medium implies that the phase will be sinusoidally modulated. This effect generates new frequency components and is referred to as "Four Wave Mixing" (FWM).
+The average power of a single frequency of light calculated from Eq.~\ref{eq:average_power} will be constant over time. If two frequencies are present, their interference will cause the average power to vary sinusoidally over time. Since $\gamma\neq0$ implies that the refractive index depends on power, the simultaneous presence of two frequencies of light in a nonlinear medium implies that the phase will be sinusoidally modulated. This effect generates new frequency components and is referred to as "Four Wave Mixing" (FWM).
 
 
 
 
 \section{Electrical phase modulation}
-To understand FWM, first consider a continuous wave laser signal launched into a commercially available phase modulator being driven by an sinusoidal electrical signal from a function generator FIGURE?!?!? See \href{https://youtu.be/j8It3to54AQ}{this video} for an experimental demonstration. The signal at the output is given by
+To understand FWM, first consider a continuous wave laser signal launched into a commercially available phase modulator being driven by an sinusoidal electrical signal from a function generator. See Fig.~\ref{fig:PM} for a visualization and \href{https://youtu.be/j8It3to54AQ}{this video} for an experimental demonstration. The signal at the output is given by
 \begin{align}
     \label{eq:phase_modulator}
-    E_{out}&=E_{in}\exp\left(i\Phi\cos(\omega_dT), \right)
+    \E_{out}&=\E_{in}\exp\left(i\Phi\cos(\omega_dT), \right)
 \end{align}
-where $\Phi$ is the maximum phase shift imparted by the modulator and $\omega_d$ is the modulation frequency. See \href{https://www.desmos.com/calculator/vcreo1gs2q}{this interactive graph} for an illustration of the impact of this modulation on the real part of $E_{out}$. Using the so-called "Jacobi-Anger Expansion"~\cite{NIST_JA_expansion}, the cosine function inside the complex exponential in Eq.~\ref{eq:phase_modulator} can be written as
+where $\Phi$ is the maximum phase shift imparted by the modulator and $\omega_d$ is the modulation frequency. See \href{https://www.desmos.com/calculator/vcreo1gs2q}{this interactive graph} for an illustration of the impact of this modulation on the real part of $\E_{out}$. Using the so-called "Jacobi-Anger Expansion"~\cite{NIST_JA_expansion}, the cosine function inside the complex exponential in Eq.~\ref{eq:phase_modulator} can be written as
 \begin{align}
 \label{eq:JA}
     \exp\left(i\Phi\cos(\omega_dT)\right) &= \sum_{n=-\infty}^{\infty}i^n J_n(\Phi) \exp\left(in\omega_dT\right),
 \end{align}
-where $J_n(\Phi)$ is the $n^{th}$ order Bessel function of the 1st kind. In short, Eq.~\ref{eq:JA} shows that sinusoidal phase modulation gives rise to new discrete frequency components whose relative power depends on the modulation amplitude, $\Phi$. Note also that applying Eq.~\ref{eq:chirp_definition} to Eq.~\ref{eq:phase_modulator} shows that the sinusoidal modulation changes the instantaneous frequency over time by $\Phi\omega_d\sin(\omega_dT)$, further suggesting that phase modulation changes the color of the incident light.
+where $J_n(\Phi)$ is the $n^{th}$ order Bessel function of the 1st kind. In short, Eq.~\ref{eq:JA} shows that sinusoidal phase modulation gives rise to new discrete frequency components spaced $\omega_d$ apart and whose relative powers depend on the modulation amplitude, $\Phi$. Note also that applying Eq.~\ref{eq:chirp_definition} to Eq.~\ref{eq:phase_modulator} shows that the sinusoidal modulation changes the instantaneous frequency over time by $\Phi\omega_d\sin(\omega_dT)$, further suggesting that phase modulation changes the color of the incident light.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/PhaseModulator.png}
+    \caption{Illustration of the impact of electrical sinusoidal phase modulation of a continuous wave optical signal. Before entering the modulator, only a single laser frequency is present. After the modulator, the alternating advancement and delay of the optical phase in the time domain is equivalent to introducing new frequency components according to Eq.~\ref{eq:JA}.}
+    \label{fig:PM}
+\end{figure}
 
 \section{Nonlinearity based phase modulation}
 \label{sec:sidebands}
@@ -51,7 +57,7 @@ Finally, moving $Q$ to the right hand side of Eq.~\ref{eq:re_index} yields
 \label{eq:FWM_general}
     \A(L,T)&=\sum_{n=-\infty}^{\infty} i^n\left[i\sqrt{P_a}J_{n+1}\left(2\gamma L\sqrt{P_aP_b}\right)+\sqrt{P_b}J_n\left(2\gamma L\sqrt{P_aP_b}\right)\right]e^{i\omega_d\left(n+\frac{1}{2}\right)T+i\gamma L[P_a+P_b]}.
 \end{align}
-In Eq.~\ref{eq:FWM_general}, the frequency component corresponding to $n=-1$ will be at $-\omega_d/2$, while the one corresponding to $n=0$ will be at $+\omega_d/2$, corresponding to the original two frequencies in Eq.~\ref{eq:FWM_input}. The average power of the $n^{th}$ order sideband is
+In Eq.~\ref{eq:FWM_general}, the frequency component for which $n=-1$ will be at $-\omega_d/2$, while the one for which $n=0$ will be at $+\omega_d/2$, corresponding to the original two frequencies in Eq.~\ref{eq:FWM_input}. The average power of the $n^{th}$ order sideband is
 \begin{align}
 \label{eq:sideband_power}
     |\A_n(L,T)|^2 &= P_aJ^2_{n+1}\left(2\gamma L \sqrt{P_aP_b}\right)+P_bJ^2_{n}\left(2\gamma L \sqrt{P_aP_b}\right).
@@ -114,7 +120,7 @@ Note that $n=0$ is the frequency at $+\omega_d/2$, which initially had the avera
 
 \section{Phase matching}
 \label{sec:Phase_matching}
-The derivation presented in Section~\ref{sec:sidebands} assumed that dispersion was negligible, which is the case for a small $\omega_d$ value and a carrier frequency close to the zero dispersion frequency explained in Subsection~\ref{subsec:ZDF}. The impact of dispersion on FWM is explained in \href{https://youtu.be/0SXPvO89jto}{this video tutorial}. It turns out that FWM is weak for positive values of $\betag_2$ and is most significant when
+The derivation presented in Section~\ref{sec:sidebands} assumes negligible dispersion, which is the case for a small $\omega_d$ value and a carrier frequency close to the zero dispersion frequency explained in Subsection~\ref{subsec:ZDF}. The impact of dispersion on FWM is explained in \href{https://youtu.be/0SXPvO89jto}{this video tutorial}. It turns out that FWM is weak for positive values of $\betag_2$ and is most significant when
 \begin{align}
 \label{eq:phase_matching}
 0&=\betag_2\omega_d^2+\gamma(P_a+P_b)    \\ \nonumber
@@ -127,8 +133,8 @@ As a consequence of FWM, a signal with a carrier frequency where $\betag_2<0$ fo
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/MI_combined.png}
-    \caption{Initial and final spectrum for a CW signal propagating through a nonlinear medium with $\betag_2<0$ for a) 25km, b) 50km, c) 75km and d) 100km. Note that particular noise frequencies are preferentially amplified due to phase matching and the "cascading" effect, which occurs when the initially amplified frequencies get strong enough. Figures generated using \href{https://colab.research.google.com/drive/1p2aQZ4zPPAIMplVxvlezdmpQt_j-rsY7?usp=sharing}{this interactive notebook}, which the reader is encouraged to experiment with.}
+    \includegraphics[width=0.75\linewidth]{figures/MI_combined.png}
+    \caption{a) Initial and final time domain power of a signal consisting of a Gaussian pulse and random noise with an amplitude 1.000 times smaller than that of the Gaussian propagated through 100m of a nonlinear medium with $\betag_2<0$. b) Same as a) but showing the spectrum. c-d) Same as a-b) but for a distance of 200m. e-f) Same as a-b) but for a distance of 300m. g) full temporal evolution for 500m. h) Same as g) but for the spectrum. Figures generated using \href{https://colab.research.google.com/drive/1p2aQZ4zPPAIMplVxvlezdmpQt_j-rsY7?usp=sharing}{this interactive notebook}, which the reader is encouraged to experiment with.}
     \label{fig:MI}
 \end{figure}
 

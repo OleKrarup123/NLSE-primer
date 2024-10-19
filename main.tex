@@ -11,7 +11,12 @@
 \usepackage{fancyhdr} 
 \pagestyle{fancy}
 \input{Acronyms}
-
+\usepackage[many]{tcolorbox}    	% for COLORED BOXES (tikz and xcolor included)
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
 \newcommand{\A}{\textcolor{red}{A}} 
 \newcommand{\E}{\textcolor{red}{E}} 
 \newcommand{\greencheck}{\textcolor{green}{\checkmark}}
@@ -39,6 +44,7 @@
 \usepackage{afterpage}
 \usepackage[nottoc]{tocbibind}
 \usepackage{amssymb}
+\usepackage{changepage}
 
 \newcommand{\degs}{^{\circ}}
 \newcommand{\inv}{$^{-1}$}
@@ -85,7 +91,7 @@
 
     \input{ch-solitons}
     \input{ch-supercontinuum}
-    
+    \input{ch-material}
     
     
     

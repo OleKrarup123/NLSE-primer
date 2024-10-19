@@ -1,10 +1,10 @@
 \chapter{Supercontinuum Generation}
 \label{ch:supercontinuum}
 
-Previous chapters explained individual linear and nonlinear effects and the interplay of a limited number of them. A summary of their impacts is provided in Tab.~\ref{tab:NL_summary}. For high power pulses with carrier frequencies where $\betag_2\lesssim 0$ and $\gamma>0$ for a given medium as well as durations below approximately 100~fs, all of the listed effects may be present simultaneously. In this case, the evolution of the pulse may be highly non-trivial and broaden its spectrum by ten to twenty times its initial bandwidth. This chapter presents an example of supercontinuum generation and explains how this process can be understood in terms of the previously presented effects.   
-
+Previous chapters explained individual linear and nonlinear effects and the interplay of a limited number of them. A summary of their impacts is provided in Tab.~\ref{tab:NL_summary}. For high power pulses with carrier frequencies where $\betag_2\lesssim 0$ and $\gamma>0$ for a given medium as well as durations below approximately 100~fs, all of the listed effects may be present simultaneously. In this case, the evolution of the pulse may be highly non-trivial and broaden its spectrum by ten to twenty times its initial bandwidth~\cite{supercontinuum_original_paper}. This chapter presents an example of supercontinuum generation and explains how this process can be understood in terms of the previously presented effects.   
 
 \begin{table}[]
+\begin{adjustwidth}{-2cm}{}
 \begin{tabular}{ccccc}
 \hline
 \textbf{Effect}       & \textbf{Time domain}                                                                                      & \textbf{Spectrum}                                                                                           & \textbf{Significant for}                                                                           & \textbf{Relevance}                                                                                                       \\ \hline
@@ -17,8 +17,8 @@ Raman                 & Red-shift at pulse peak.                                
 \end{tabular}
 \caption{Summary of the impacts of different linear and nonlinear effects.}
 \label{tab:NL_summary}
+\end{adjustwidth}
 \end{table}
-
 \section{Case study}
 To simulate the generation of a supercontinuum, the values in Tab.~\ref{tab:SC_params} were used. The resulting supercontinuum is presented in Fig.~\ref{fig:SC_combined}. The spectrum in Fig.~\ref{fig:SC_combined} c) indicates that the pulse undergoes SPM during the first 1~m of propagation, while Fig.~\ref{fig:SC_combined} b) indicates that soliton fission occurs immediately afterwards. The high-power pulse with a much smaller duration that walks off parabolically towards later times is a Raman soliton that continuously red-shifts itself. The low-power light that "walks off" linearly towards later times is most likely FWM generated when the fissioned soliton overlaps with the remnants of the initial pulse. See \href{https://youtu.be/-GDsMDpC3oA}{this video tutorial} for an in-depth analysis of the properties of this supercontinuum.
 
@@ -45,7 +45,7 @@ $\gamma$ {[}1/W/m{]}                    & 0.09                                  
 Self-Steepening                         & ON                                              \\
 Raman model                             & Eq.~\ref{eq:raman_basic}
 \end{tabular}
-\caption{Simulation parameters used for generating a supercontinuum.}
+\caption{Simulation parameters used for generating a supercontinuum taken from~\cite{supercontinuum_paper}}
 \label{tab:SC_params}
 \end{table}
 
@@ -75,7 +75,7 @@ To further explore the properties of the supercontinuum modelled in Fig.~\ref{fi
 
 \item \textbf{Only $\betag_2<0$}. The presented simulation uses $\betag_n\neq0$ for $n>2$. Set $\betag_n = 0$ for $n>2$, run the simulation and explain why the evolution of the pulse and its spectrum has changed. 
 
-\item \textbf{Negative $\betag_3$}. The presented simulation uses $\betag_3>0$. Change the sign of $\betag_3$ so it becomes positive. As a hint, compute the zero dispersion frequency using Eq.~\ref{eq:ZDF} and consider how it changes when the sign of $\betag_3$ is flipped. Note that you may also want to change the sign of the time offset from -1.75~ps to 1.75~ps to ensure proper graphing of the time evolution. THINK MORE ABOUT THIS!!!  
+\item \textbf{Negative $\betag_3$}. The presented simulation uses $\betag_3>0$. Change the sign of $\betag_3$ so it becomes positive. Note that you may want to change the sign of the time offset from -1.75~ps to +1.75~ps to ensure proper graphing of the time evolution. Can you explain why a Raman soliton does not arise when $\betag_3<0$? HINT: Compute the zero dispersion frequency using Eq.~\ref{eq:ZDF} and consider how it changes when the sign of $\betag_3$ is flipped.
 
 
 \item \textbf{Alter the Raman model}. The presented simulation uses Eq.~\ref{eq:raman_basic} to model the impact of the Raman effect. Follow the hints in the notebook and use Eq.~\ref{eq:raman_new}, Eq.~\ref{eq:Raman_exact} or $f_R=0$ instead.  

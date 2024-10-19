@@ -1,10 +1,7 @@
 \chapter{The Raman effect}
 \label{ch:Raman}
 
-This chapter explains how to understand the Raman-effect. Link to Desmos notebooks. 
-
-\section{Microscopic picture}
-When exposed to an oscillating electromagnetic field, the electrons in the medium will respond almost instantly due to their low mass. The nuclei around which these electrons orbit will react much more slowly due to their comparatively large mass. The result is that the nonlinear phase shift affecting a particular instant of a pulse for a certain fiber segment depends on two things: The optical power of the pulse at that instant and the optical power that affected that location in the past. The nonlinear impact that time-delayed mechanical vibrations of the nuclei in the material lattice have on the electromagnetic field that induced them is called the "Raman effect" \CITE.  
+When exposed to an oscillating electromagnetic field, the electrons in the medium will respond almost instantly due to their low mass. The nuclei around which these electrons orbit will react much more slowly due to their comparatively large mass. The result is that the nonlinear phase shift affecting a particular instant of a pulse for a certain fiber segment depends on two things: The optical power of the pulse at that instant and the optical power that affected that location in the past. The nonlinear impact that time-delayed mechanical vibrations of the nuclei in the material lattice have on the electromagnetic field that induced them is called the "Raman effect"~\cite{Raman_original}.  
 
 
 
@@ -20,7 +17,7 @@ which is equivalent to Eq.~\ref{eq:GNLSE} when attenuation, dispersion and self-
     \label{eq:response}
     R(T_{delay})&= (1-f_R)\delta(T_{delay})+f_Rh_R(T_{delay}),
 \end{align}
-where $0\leq f_R\leq 1$ is a scalar that determines the relative magnitude of the two contributions. The exact functional form of the Raman response function, $h_R(T_{delay})$, depends on the material, but generally resembles a sine function multiplied by a dampening term and must satisfy $\int_{-\infty}^{\infty}h_R(T_{delay}) dT_{delay}=1$, as it essentially "weighs" how much the powers at different times in the past contribute to the current nonlinear phase shift. Additionally, it must be demanded that $h_R(T_{delay})=0$ for $T_{delay}\leq0$ to prevent the expression from violating causality by letting \emph{future} powers affect the current nonlinear phase shift. 
+where $0\leq f_R\leq 1$ is a scalar that determines the relative magnitude of the two contributions. The exact functional form of the Raman response function, $h_R(T_{delay})$, depends on the material, but generally resembles a sine function multiplied by a dampening term and must satisfy $\int_{-\infty}^{\infty}h_R(T_{delay}) dT_{delay}=1$, as it essentially "weighs" how much the powers at different times in the past contribute to the current nonlinear phase shift.  Additionally, it must be demanded that $h_R(T_{delay})=0$ for $T_{delay}\leq0$ to prevent the expression from violating causality by letting \emph{future} powers affect the current nonlinear phase shift. See \href{https://www.desmos.com/calculator/bdg6icprch}{this interactive graph} for an illustration of the impact of past power on the phase shift caused by the Raman effect.
 Intuitively, the function $h_R(T_{delay})$ is like the function that describe the amplitude of a sound wave from a tuning fork, piano key or guitar string after it is suddenly struck; an oscillation that gradually "rings down". Continuing the analogy, if one views $|\A(z,T-T_{delay})|^2$ as a large collection of instantaneous strikes with different strengths at different times, it makes sense that the current oscillation depends on all the ones that were present in the past.  
 Substituting Eq.~\ref{eq:response} into Eq.~\ref{eq:raman} and evaluating the integral over the delta function yields
 \begin{align}
@@ -49,9 +46,7 @@ An approximate expression for the Raman effect in silica, which assumes that the
 \label{eq:raman_basic}
     h_R^{basic}(T_{delay})&= \left(\frac{1}{\tau_1^{2}}+\frac{1}{\tau_2^{2}} \right)\tau_1\exp\left(-\frac{T_{delay}}{\tau_2}\right)\sin\left(\frac{T_{delay}}{\tau_1}\right),
 \end{align}
-with $f_R=0.18$, $\tau_1=12.2$~fs and $\tau_2=32$~fs. All presented expressions for $h_R(T_{delay})$ are assumed to be zero for $T_{delay}\leq0$ to respect causality. Mathematically, this can be ensured through multiplication by the Heaviside step-function.
-
-A more accurate approximation than Eq.~\ref{eq:raman_basic} to the vibrational behavior of silica is  
+with $f_R=0.18$, $\tau_1=12.2$~fs and $\tau_2=32$~fs. All presented expressions for $h_R(T_{delay})$ are assumed to be zero for $T_{delay}\leq0$ to respect causality. Mathematically, this can be ensured through multiplication by the Heaviside step-function. A more accurate approximation than Eq.~\ref{eq:raman_basic} to the vibrational behavior of silica is  
 \begin{align}
 \label{eq:raman_new}
     h_R^{better}(T_{delay})&= (1-f_b) h_R^{basic}(T_{delay})+f_b\frac{2\tau_b-T_{delay}}{\tau_b^2}\exp\left(-\frac{T_{delay}}{\tau_b}\right),
@@ -60,23 +55,20 @@ where $f_R=0.245$, $f_b=0.21$ and $\tau_b=96$~fs. The exact expression for the R
 
 \begin{align}
 \label{eq:Raman_exact}
-    h_R^{exact}(T_{delay})&=c^{-1}_{norm}\sum_{n=0}^{12}A_n\exp\left(- g_nT_{delay}-0.25G_n^2T^2_{delay}  \right)\sin\left(2\pi \nu_nT_{delay} \right),
+    h_R^{exact}(T_{delay})&=c^{-1}_{norm}\sum_{n=0}^{12}C_n\exp\left(- g_nT_{delay}-0.25G_n^2T^2_{delay}  \right)\sin\left(2\pi \nu_nT_{delay} \right),
 \end{align}
-where $f_R=0.18$ and the parameters $A_n$, $g_n$, $G_n$, and $\nu_n$ are listed in Tab.~\ref{tab:raman_coeffs} and $c_{norm}=3.75225$~ps so that $\int_0^\infty h_R^{exact}(T_{delay}) dT_{delay}=1$. A visualization of these three models of the Raman response of silica and their impacts on the same optical pulse is presented in Fig.~\ref{fig:raman_combined}. The imaginary parts of the Fourier Transforms of the different expressions for $h_R(T_{delay})$ are plotted in Fig.~\ref{fig:raman_combined}~b). Physically, these spectra imply that for a given optical frequency, the Raman effect will allow it to "steal" power from frequencies 13~THz above it and force it to "donate" power to frequencies 13~THz below it. For reasons similar to those addressed in Sec.~\ref{sec:KK_relations}, the real parts of the spectra (not shown) relate to the change in refractive index due to the Raman effect and allows one to determine the time delay it induces. From the maximum values of the curves shown in Fig.~\ref{fig:raman_combined}~b), the maximum Raman gain and thus the characteristic length over which the Raman effect becomes significant can be expressed as
+where $f_R=0.18$ and the parameters $C_n$, $g_n$, $G_n$, and $\nu_n$ are listed in Tab.~\ref{tab:raman_coeffs} and $c_{norm}=3.75225$~ps so that $\int_0^\infty h_R^{exact}(T_{delay}) dT_{delay}=1$. A visualization of these three models of the Raman response of silica and their impacts on the same optical pulse is presented in Fig.~\ref{fig:raman_combined}. The imaginary parts of the Fourier Transforms of the different expressions for $h_R(T_{delay})$ are plotted in Fig.~\ref{fig:raman_combined}~b). Physically, these spectra imply that the Raman effect allows a given optical frequency to "steal" power from frequencies 13~THz above it and forces it to "donate" power to frequencies 13~THz below it. For reasons similar to those addressed in Sec.~\ref{sec:KK_relations}, the real parts of the spectra (not shown) relate to the change in refractive index due to the Raman effect and allows one to determine the time delay it induces. From the maximum values of the curves shown in Fig.~\ref{fig:raman_combined}~b), the maximum Raman gain and thus the characteristic length over which the Raman effect becomes significant can be expressed as
 \begin{align}
-    g_{Raman} &= \frac{4}{3} \gamma f_R P_0 n(\omega_0)\cdot max(  Im\{ \FT \{ h_R(T_{delay}) \}(\omega) \} )\\ 
+    g_{Raman} &= \frac{4}{3} \gamma f_R P_0 n(\omega_0)\cdot \text{max}( \text{Im} \{ \FT \{ h_R(T_{delay}) \}(\omega) \} )\\ 
     L_{Raman} &= \frac{1}{g_{Raman}},
 \end{align}
-where $P_0$ is the maximum power of the pulse and $n(\omega_0)$ is the refractive index of the medium ($\approx 1.47$ for silica). 
-
-
-See \href{https://www.youtube.com/playlist?list=PLdFybGSAoPnn6tnSmptR71zKAgcKsjIfi}{these video tutorials} for more information on the Raman effect.   
+where $P_0$ is the maximum power of the pulse and $n(\omega_0)$ is the refractive index of the medium ($\approx 1.47$ for silica). See \href{https://www.youtube.com/playlist?list=PLdFybGSAoPnn6tnSmptR71zKAgcKsjIfi}{these video tutorials} for more information on the Raman effect.   
 
 \begin{table}
 \begin{center}
     \begin{tabular}{c|c|c|c|c}
     \label{tab:raman_coeffs}
-        n  &$A_n$ & $g_n$ [fs] & $G_n$ [fs] & $\nu_n$ [THz]  \\ \hline
+        n  &$C_n$ & $g_n$ [fs] & $G_n$ [fs] & $\nu_n$ [THz]  \\ \hline
         0  &  1    &0.521       &1.562          &1.69   \\
         1  &  11.4 &1.163       &3.310          &3.00   \\
         2  &  36.67&1.749       &5.246          &6.93   \\

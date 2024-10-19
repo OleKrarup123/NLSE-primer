@@ -1,6 +1,6 @@
 \chapter{Introduction}
 \label{ch:Introduction}
-The Nonlinear Schr{\"o}dinger Equation (NLSE) in its generalized, scalar form describes how the normalized envelope $\A =\A(z,T)$ of the complex electric field $\E= \E(z,T) = \E_0\cdot \exp(-i(\betag(\omega_0)z-\omega_0T))$, oscillating with a carrier angular frequency $\omega_0$ and carrier spatial frequency $\betag(\omega_0)$, evolves as it propagates through a medium, where attenuation, dispersion and a $\chi^{3}$ nonlinearity are present. Mathematically, it is given by
+The Nonlinear Schr{\"o}dinger Equation (NLSE) in its generalized, scalar form describes how the normalized envelope $\A =\A(z,T)$ of the complex electric field $\E= \E(z,T) = \E_0\cdot \exp(-i(\betag(\omega_0)z-\omega_0T))$, oscillating with a carrier angular frequency, $\omega_0$, and carrier spatial frequency $\betag(\omega_0)$, evolves as it propagates through a medium, where attenuation, dispersion and a $\chi^{3}$ nonlinearity are present. Mathematically, it is given by
 
 \begin{align}
     \label{eq:GNLSE}
@@ -12,8 +12,21 @@ where $\alpha$ is the power attenuation/gain coefficient, $\betag_n=\partial_\om
 \section{Goal}
 This primer explores the constituent terms of Eq.~\ref{eq:GNLSE} and their interactions in a way that aims to develop an intuitive understanding of the mathematics and the underlying physics. To achieve this goal, discussions of more complicated effects, such as those involving the polarization of light, are omitted in favour of more detailed derivations and examples of purely scalar effects. Hopefully, this approach provides the reader, with the basic tools needed for analyzing common experimental results in nonlinear optics and tackling more advanced resources, papers and textbooks on the topic. 
 
+\section{Availability}
+This primer is freely available on \href{https://github.com/OleKrarup123/NLSE-primer}{GitHub} and continuously updated by the author in response to reader feedback. Readers are encouraged to submit questions, tips and suggestions to \href{yourfavouriteta@gmail.com}{YourFavouriteTA@gmail.com}. 
+
+
 \section{Citation Policy}
-Since the ultimate goal is to advance and deepen the reader's understanding, this primer will both cite the original academic works on the explored topics, and link to items such as YouTube videos, personal web pages, online encyclopedia entries, forum questions, interactive tools and similar material produced by hobbyists and professional researchers alike. The aim is to both provide the reader with a starting point for a comprehensive review of the formal literature necessary for independently writing a paper or thesis on nonlinear optics and a collection of high-quality, accessible explanations of relevant topics both within and adjacent to the scope of this primer. 
+This primer cites both original academic works on the explored topics, and links to items such as YouTube videos, personal web pages, online encyclopedia entries, interactive tools and similar material produced by hobbyists and professional researchers alike. The aim is to both provide the reader with a starting point for a comprehensive review of the formal literature necessary for independently writing a paper or thesis on nonlinear optics and a collection of high-quality, accessible explanations to deepen their understanding. 
 
 \subsection{On citing this primer}
-This primer contains no original research on the NLSE and should be viewed as a collection of detailed notes. When writing a paper or thesis presenting new research on the NLSE, it is recommended that the oldest original works on relevant aspects of it, such as~\cite{soliton_first_theory} and~\cite{Soliton_experimental_first} in the case of solitons are referenced preferentially before this primer. However, if the aim is simply to familiarize readers with the NLSE to help them grasp original research on it, this primer can be cited as 
+This primer contains no original research on the NLSE and should be viewed as a collection of detailed notes. It should not be cited as a source when writing a paper or thesis presenting new research on the NLSE. Instead, please cite the oldest original works on relevant topics, such as~\cite{soliton_first_theory} and~\cite{Soliton_experimental_first} in the case of solitons. However, if the aim is simply to familiarize readers with the NLSE to help them grasp original research on it, this primer can be cited in BibTeX format as~\cite{NLSE_primer}:\\
+\begin{boxA}
+@misc\{NLSE\_primer,  \\
+author = "O. Krarup", \\
+title = "\{A Primer on the Nonlinear Schrödinger Equation\}", \\
+note = "Commit SHA: 9f1b93a", \\
+url = \{https://github.com/OleKrarup123/NLSE-primer/blob/main/NLSE\_primer.pdf\}\}
+\end{boxA}
+
+Note that because this primer is freely available on GitHub and is continuously updated, the URL should link to the most recent version, while the "Commit SHA" should be that of the most recent commit the citation is made.     

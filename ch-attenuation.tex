@@ -1,13 +1,12 @@
 \chapter{Attenuation and Gain}
 \label{ch:attenuation}
 
-REWORK PHYSICAL EXPLANATION!!!
 
 Light propagating through a glass medium will naturally experience attenuation as impurities or lattice defects can scatter part of the electromagnetic field away from the original direction of propagation. Because nonlinear optical effects become less significant if the intensity of the light is low, understanding the impact of attenuation is important for understanding Eq.~\ref{eq:GNLSE}.
 
 
 \section{Physical origins of attenuation}
-When light propagates in a waveguide, such as an optical fiber, attenuation can occur due to chemical impurities in the glass, crystal defects in the lattice or tight bends in the waveguide. Additionally, if the carrier frequency of the light matches the vibration frequency of a chemical bond in the crystal lattice, light can be converted directly into heat. See \href{https://www.youtube.com/watch?v=QCX62YJCmGk&list=PLZHQObOWTQDMKqfyUvG2kTlYt-QQ2x-ui}{this video series} for an intuitive picture of how light propagates through an ideal medium. Note that each atom excited by an electromagnetic plane wave emits radiation in a dipole pattern, which is very different from a plane wave. It is only the interference of many dipoles excited in the same way that results in the combined field propagating like a plane wave. A dipole at one location oscillating at a different amplitude or phase than its neighbours will interfere differently with all the others and send part of the electromagnetic field in a different direction. 
+When light propagates in a waveguide, such as an optical fiber, attenuation can occur due to chemical impurities in the glass, crystal defects in the lattice or tight bends in the waveguide. Additionally, if the carrier frequency of the light matches the vibration frequency of a chemical bond in the crystal lattice, light can be converted directly into heat. See \href{https://www.youtube.com/watch?v=QCX62YJCmGk&list=PLZHQObOWTQDMKqfyUvG2kTlYt-QQ2x-ui}{this video series} for an intuitive picture of how light propagates through an ideal medium. 
 
 
 \section{Describing attenuation}
@@ -17,14 +16,14 @@ Consider Eq.~\ref{eq:GNLSE} where all parameters except for $\alpha$ is equal to
 \begin{align}
     \label{eq:attenuation}
     \partial_z\A &= \frac{\alpha}{2} \A \\ \nonumber
-    \A(z,t)&=\A(0,t)\exp\left( \frac{\alpha}{2}z \right). 
+    \A(z,T)&=\A(0,T)\exp\left( \frac{\alpha}{2}z \right). 
 \end{align}
 When $\alpha<0$, Eq.~\ref{eq:attenuation} implies that the field will attenuate with distance, while $\alpha>0$ implies that the field experiences gain. Note that the power of the field is proportional to the absolute square of the field, so
 \begin{align}
     \label{eq:attenuation_power}
     P(z,t)=|\A(z,t)|^2&=|\A(0,t)|^2 \exp\left( \alpha z \right). 
 \end{align}
-In Eq.~\ref{eq:GNLSE}, Eq.~\ref{eq:attenuation} and Eq.~\ref{eq:attenuation_power}, $\alpha$ is the "power attenuation coefficient", which tells you by how many factors of $e$ the \emph{power} of the field has changed after propagating a certain distance. Other authors define $\alpha$ to be the "field attenuation coefficient", which tells you by how many factors of $e$ the \emph{field} has changed after propagating a certain distance, in which case Eq.~\ref{eq:attenuation_power} would contain $2\alpha z$ in the exponential instead of $\alpha z$. 
+In Eq.~\ref{eq:GNLSE}, Eq.~\ref{eq:attenuation} and Eq.~\ref{eq:attenuation_power}, $\alpha$ is the "power attenuation coefficient", which determines by how many factors of $e$ the \emph{power} of the field has changed after propagating a certain distance. Other authors define $\alpha$ to be the "field attenuation coefficient", which determines by how many factors of $e$ the \emph{field} has changed after propagating a certain distance, in which case Eq.~\ref{eq:attenuation_power} would contain $2\alpha z$ in the exponential instead of $\alpha z$. 
 
 \section{The dB scale}
 \begin{table}[]
@@ -48,7 +47,7 @@ Conversely, if the power is then boosted by 15dB, the new power is
 \end{align}
 
 
-Note that $10\log_{10}(10)=10$~dB, $10\log_{10}(0.1)=-10$~dB, $10\log_{10}(2)\approx3$~dB and $10\log_{10}(0.5)\approx-3$~dB. Thus, if the power is scaled up by a factor of $20=10\cdot 2$, this corresponds to an increase by $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$dB. See Tab.~\ref{tab:dB} for more examples. 
+Note that $10\log_{10}(10)=10$~dB, $10\log_{10}(0.1)=-10$~dB, $10\log_{10}(2)\approx3$~dB and $10\log_{10}(0.5)\approx-3$~dB. Thus, if the power is scaled up by a factor of $20=10\cdot 2$, this corresponds to an increase of $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$dB. See Tab.~\ref{tab:dB} for more examples. 
 
 The attenuation coefficient, $\alpha$ is often reported in dB/km. For example, single-mode optical fibers for telecommunications  have typical attenuation coefficients of $-0.22$dB/km near 193~THz (corresponding to approximately 1550~nm). This implies that a 100km long fiber will change the optical power by $-22$~dB, which corresponds to a reduction by a factor of approximately 158.5. If $\alpha=-0.22$dB/km, the appropriate value of $\alpha$ measured in "factors of e per km" to use in Eq.~\ref{eq:GNLSE} (assuming that $z$ is measured in units of km) can be calculated from
 \begin{align}
@@ -72,7 +71,7 @@ and conversely,
 \end{align}
 
 
-Using "dBm" is convenient as weak signals that are nevertheless detectable can be a few nW, while the peak powers of pulses that have undergone, for example, \href{https://youtu.be/Eh5CHRWFT-M}{chirped pulse amplification} can reach MW or even GW. It also makes accounting for the impact of attenuation and gain easier than using Eq.~\ref{eq:boost} because a signal with an initial power of $0.13$~mW=$-8.86$~dBm, which gets amplified by 15~dB will have a final power of $-8.86~dBm+15~dB=6.13$~dBm.    
+Using "dBm" is convenient as weak signals that are nevertheless detectable can be a few nW, while the peak powers of pulses that have undergone, for example, \href{https://youtu.be/Eh5CHRWFT-M}{chirped pulse amplification} can reach MW or even GW~\cite{Chirp_STRICKLAND_Nobel_prize}. It also makes accounting for the impact of attenuation and gain easier than using Eq.~\ref{eq:boost} because a signal with an initial power of $0.13$~mW=$-8.86$~dBm, which gets amplified by 15~dB will have a final power of $-8.86~dBm+15~dB=6.13$~dBm.    
 
 
 \section{Common dB and dBm mistakes}

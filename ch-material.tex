@@ -1,0 +1,72 @@
+\chapter{Recommended material}
+\label{ch:material}
+The following is a list of useful and accessible resources on both optics, electronics and communication. 
+
+\section{Optics}
+
+\subsection*{Elements of Photonics}
+This textbook by prof. Keigo Iizuka on the theory behind practical optical devices covers a wide range of topics. Highly recommended for its treatment of the gain and noise properties of the Erbium Doped Fiber Amplifier (EDFA), which is an essential instrument in modern optics and telecommunications. 
+
+
+\subsection*{Modern Optics lectures by Prof. Partha Roy Chaudhuri}
+This \href{https://www.youtube.com/watch?v=2WiMeh1Dxl8&list=PLbRMhDVUMngePMuAGeAUeGVuZffTFY-5i}{free series of 60 video lectures} covers the basics of Maxwell's Equations, polarization and birefringence as well as more advanced topics including wave guides and devices such as electro-optical modulators. Highly recommended for the well-structured and mathematically thorough treatment of all described subjects. 
+
+\subsection*{Non-linear Optics lectures by Prof. Samudra Roy}
+This \href{https://www.youtube.com/watch?v=EiIDScj124Q&list=PLbRMhDVUMngfBwyonVP8VIsabtnsV3GVv}{series of 60 video lectures} first explains essential concepts in linear optics followed by a detailed derivation of both 2nd-order and 3rd-order nonlinear effects starting from Maxwell's Equations. Second Harmonic Generation (SHG), Difference Frequency Generation (DFG), Optical Parametric Oscillators (OPO) along with other phenomena beyond the scope of this primer are covered. Particularly recommended for its explanation of the symmetry- and tensor properties of the $\chi^{(2)}$ and $\chi^{(3)}$ nonlinearities. 
+
+\subsection*{Nonlinear Fiber Optics}
+This textbook by Govind P. Agrawal explains the mathematics behind Eq.~\ref{eq:GNLSE} in great detail and with frequent reference to experimental results. Highly recommended for its in-depth treatment of advanced phenomena involving polarization, Stimulated Brillouin Scattering and novel fibers.
+
+\subsection*{MIT "Demonstrations in Lasers and Optics" lecture series}
+Presented by prof. Shaoul Ezekiel, \href{https://www.youtube.com/watch?v=1cEXNLP5uE0&list=PL4E7FAAD67B171EBC}{this series of 49 video lectures} contains practical demonstrations of fundamental optical effects, such as polarization, interference and diffraction in the context of free-space optics. Highly recommended for its systematic experiments.    
+
+\subsection*{International School on Parametric Non Linear Optics lectures}
+This \href{https://www.youtube.com/@ispnlo9041/videos}{series of 44 video lectures} delivered by experts in nonlinear optics. Highly recommended for covering advanced topics beyond what is usually described in ordinary course work.  
+
+\subsection*{Les' Lab}
+This \href{https://www.youtube.com/@LesLaboratory/videos}{YouTube channel} specializes in practical demonstrations of laser-technology, including dye lasers, spectrometers, electro-optical modulators, SHG and even super-continuum generation. Highly recommended for the illustrative demonstrations of relevant effects and the detailed explanations of the electronics required to operate optical devices.
+
+\subsection*{YourFavouriteTA}
+This \href{https://www.youtube.com/@yourfavouriteta/videos}{YouTube channel} by the author of this primer explains nonlinear optics through both practical experiments, theoretical derivations and numerical simulations. It aims to provide intuitive explanations of both linear and nonlinear processes usually described by intricate equations.  
+
+
+\section{Electronics}
+\subsection*{The Signal Path}
+This \href{https://www.youtube.com/@Thesignalpath/videos}{YouTube channel} is dedicated to practical experiments, tear-downs and repairs of power supplies, signal generators, detectors, oscilloscopes, spectrum analyzers and other equipment commonly found in scientific and industrial laboratories. Particularly recommended for its videos on Radio-Frequency (RF) devices.
+
+\subsection*{EMPossible}
+This \href{https://www.youtube.com/@empossible1577/playlists}{YouTube channel} focuses on both the basics of electromagnetic theory and advanced topics such as RF waveguides, semi-conductor band structures and finite element analysis. Highly recommended for the broad range of concepts covered and the streamlined tutorials with excellent illustrations.  
+
+\subsection*{Keysight Electronics Tutorials}
+The \href{https://www.youtube.com/@KeysightLabs/videos}{YouTube Channel} of the electronics equipment company, Keysight, contains explanations focusing on measurements of electrical signals. Highly recommended for the focus on oscilloscopes as this is a commonly used tool for visualizing the power over time measured by photodiodes. 
+
+
+\subsection*{Rohde\&Schwarz Electronics Tutorials}
+This 
+\href{https://www.youtube.com/watch?v=rUDMo7hwihs&list=PLKxVoO5jUTlvsVtDcqrVn0ybqBVlLj2z8}{YouTube playlist} produced by the electronics equipment company, Rohde\&Schwarz, provides in-depth tutorials on measurement and characterization of properties of electrical devices and signals, such as power, phase noise, amplifier noise factor and more. Many of these concepts are highly transferable to the field of optics. 
+
+
+
+\section{Communication}
+
+
+\subsection*{Ian Explains}
+This \href{https://www.youtube.com/@iain_explains/videos}{YouTube channel} explains essential methods in digital and analog signal processing, communication and statistics. Highly recommended for its illustrative examples and straight-forward derivations.
+
+
+\section{Simulation tools}
+
+\subsection*{Octave Photonics}
+This free, interactive, \href{https://www.octavephotonics.com/nlse}{browser based tool} for solving Eq.~\ref{eq:GNLSE} is great for visualizing the impact of essential phenomena like dispersion, soliton formation and the Raman effect. Highly recommended for its easy-to-use interface.
+
+\subsection*{ssfm\_functions.py}
+This \href{https://github.com/OleKrarup123/NLSE-vector-solver/tree/main}{open-source python library} for solving Eq.~\ref{eq:GNLSE} is created and maintained by the author of this primer. It provides a high degree of flexibility and customizability in setting up simulations using code. For example, arbitrary fiber links consisting of multiple spans with varying properties including different Raman models, input/output gain or dispersion compensation can be created using a for-loop, and simulation results are easily visualized using built-in plotting functions. The ability to modify the tool makes it ideal for graduate students in nonlinear optics, who often need to model novel and highly specific systems as part of their research.   
+
+\subsection*{gnlse-python}
+This \href{https://github.com/WUST-FOG/gnlse-python}{open-source python library} for solving Eq.~\ref{eq:GNLSE} has excellent \href{https://gnlse.readthedocs.io/en/latest/index.html}{documentation} and built-in visualization functions. An arXiv preprent explaining the implementation is also available~\cite{redman2021gnlsepythonopensourcesoftware}. 
+
+\subsection*{GMMNLSE-Solver}
+This \href{https://github.com/WiseLabAEP/GMMNLSE-Solver-FINAL}{open-source MATLAB library} allows one to solve a Multi-mode version of Eq.~\ref{eq:GNLSE} and model exotic phenomena such as multi-mode solitons. It is a highly advanced tool recommended for extreme use-cases if one is already very comfortable with the basic single-mode case presented in this primer. If configured correctly, it allows computations to be parallelized on the GPU, making it quite fast for such a complex simulation. 
+
+
+
