@@ -1,0 +1,65 @@
+\acswitchoff 
+\contentsline {chapter}{Table of Contents}{ii}{Doc-Start}%
+\contentsline {chapter}{插图}{vi}{chapter*.2}%
+\contentsline {chapter}{表格}{ix}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}介绍}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}目标}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}可获取性}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}引用政策}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}关于引用本入门指南}{2}{subsection.1.3.1}%
+\contentsline {chapter}{\numberline {2}数学和理论}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}实数场和复数场}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}实际电场和电场包络}{4}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}傅立叶变换}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}脉冲}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}啁啾和延迟}{6}{section.2.4}%
+\contentsline {chapter}{\numberline {3}损耗和增益}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}损耗的物理起源}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}损耗的描述}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}dB的单位换算}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}在dBm下测量功率}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}常见的 dB 和 dBm 错误}{10}{section.3.5}%
+\contentsline {chapter}{\numberline {4}色散}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}脉冲和空间频率}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}$\textcolor {ForestGreen}{\beta }_0$ - 载波的延迟程度}{14}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}相速度}{14}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}$\textcolor {ForestGreen}{\beta }_1$ - 以载波为中心的脉冲包络延迟的程度}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}$\textcolor {ForestGreen}{\beta }_2$ - 构成以载波为中心的脉冲包络的频率相对延迟的程度}{15}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}零色散频率}{16}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}$\textcolor {ForestGreen}{\beta }_n$ - 高阶延迟}{17}{section.4.5}%
+\contentsline {section}{\numberline {4.6}$\alpha (\omega )$ 和 $\textcolor {ForestGreen}{\beta }(\omega )$ 是独立的吗？}{17}{section.4.6}%
+\contentsline {chapter}{\numberline {5}自相位调制}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}脉冲中的相位变化}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}谱展宽}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}自相位调制、损耗与“有效长度”}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.4}自陡效应}{24}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}适用性}{24}{subsection.5.4.1}%
+\contentsline {chapter}{\numberline {6}四波混频}{26}{chapter.6}%
+\contentsline {section}{\numberline {6.1}电相位调制}{26}{section.6.1}%
+\contentsline {section}{\numberline {6.2}非线性相移}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}交叉相位调制(XPM)}{31}{section.6.3}%
+\contentsline {section}{\numberline {6.4}相位匹配}{31}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}调制不稳定（MI）}{33}{subsection.6.4.1}%
+\contentsline {chapter}{\numberline {7}拉曼效应}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}拉曼响应函数}{35}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}$h_R(T_{delay})$的表达式}{37}{subsection.7.1.1}%
+\contentsline {chapter}{\numberline {8}异域脉冲（Exotic pulses）}{40}{chapter.8}%
+\contentsline {section}{\numberline {8.1}基本孤子}{40}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}通信中的孤子}{41}{subsection.8.1.1}%
+\contentsline {section}{\numberline {8.2}Higher order Solitons}{41}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}孤子分裂}{41}{subsection.8.2.1}%
+\contentsline {section}{\numberline {8.3}光学波破裂（Optical Wave Breaking）}{44}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}相似孤子（Similaritons）}{44}{subsection.8.3.1}%
+\contentsline {section}{\numberline {8.4}新型孤子}{44}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}暗孤子（Dark Solitons）}{44}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}拉曼孤子（Raman Solitons）}{46}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}矢量孤子（Vector Solitons）}{46}{subsection.8.4.3}%
+\contentsline {chapter}{\numberline {9}超连续谱生成}{48}{chapter.9}%
+\contentsline {section}{\numberline {9.1}案例研究}{48}{section.9.1}%
+\contentsline {section}{\numberline {9.2}你的实验}{48}{section.9.2}%
+\contentsline {chapter}{\numberline {10}推荐资料}{52}{chapter.10}%
+\contentsline {section}{\numberline {10.1}光学}{52}{section.10.1}%
+\contentsline {section}{\numberline {10.2}电子学}{53}{section.10.2}%
+\contentsline {section}{\numberline {10.3}通信}{54}{section.10.3}%
+\contentsline {section}{\numberline {10.4}仿真工具}{54}{section.10.4}%
+\contentsline {chapter}{参考文献}{56}{chapter*.21}%

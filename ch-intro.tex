@@ -1,0 +1,30 @@
+\chapter{介绍}
+\label{ch:Introduction}
+广义标量形式的非线性薛定谔方程（NLSE）描述了复电场的归一化包络 \(\A = \A(z,T)\) 如何随传播介质中的传播而演变。在该介质中存在损耗（α）、色散（β）和 \(\chi^{3}\) 非线性（γ）。复电场的形式为 \(\E = \E(z,T) = \E_0 \cdot \exp(-i(\betag(\omega_0)z - \omega_0 T))\)，其振荡频率为载波角频率 \(\omega_0\)，载波空间频率为 \(\betag(\omega_0)\)。广义非线性薛定谔方程的数学表达式如下：
+\begin{align}
+    \label{eq:GNLSE}
+    \partial_z \A = \frac{\alpha}{2}\A+i \sum_{n=2}^{\infty}i^n \frac{\betag_n}{n!}\partial_T^n\A  + i\gamma\left(1+\frac{i}{\omega_0}\partial_T  \right)\left( 
+\A \int_{0}^{\infty} R(T_{delay})|\A(z,T-T_{delay})|^2 dT_{delay} \right),
+\end{align}
+其中，\(\alpha\) 是功率衰减/增益系数，\(\betag_n = \partial_\omega^n \betag(\omega)|_{\omega = \omega_0}\) 是在 \(\omega = \omega_0\) 处计算的空间频率泰勒展开系数，\(\gamma\) 是非线性系数，\(R(T_{delay})\) 是在当前时刻 \(T\) 之前 \(T_{delay}\) 时间延迟处的非线性时间响应函数。通过求解方程 Eq.~\ref{eq:GNLSE}，可以描述超连续谱生成~\cite{supercontinuum_original_paper,NLSE_original}、孤子~\cite{soliton_first_theory,Soliton_experimental_first}、光纤通信系统中的非线性噪声~\cite{poggiolini2014detailedanalyticalderivationgn} 以及其他具有广泛科学和工业应用的奇异光学现象。
+\section{目标}
+本入门指南旨在以直观的方式探讨方程 Eq.~\ref{eq:GNLSE} 的组成项及其相互作用，旨在帮助读者理解背后的数学和物理基础。为了实现这一目标，本指南舍弃了更复杂的效应讨论，例如涉及光的偏振的影响，而更注重纯粹标量效应的详细推导和示例。希望这种方法能够为读者提供分析非线性光学中常见实验结果的基本工具，同时也为深入研究相关主题的资源、论文和教科书打下基础。
+
+\section{可获取性}
+本入门指南可在 \href{https://github.com/OleKrarup123/NLSE-primer}{GitHub} 免费获取，作者会根据读者的反馈不断更新。鼓励读者提交问题、建议和意见至 \href{yourfavouriteta@gmail.com}{YourFavouriteTA@gmail.com}。
+
+\section{引用政策}
+本指南引用了所探讨主题的原创学术研究成果，并提供了一些链接，例如 YouTube 视频、个人网页、在线百科全书条目、互动工具等，这些内容由业余爱好者和专业研究人员共同创作。目的在于为读者提供一个全面回顾正式文献的起点，以便他们可以独立撰写关于非线性光学的论文或学位论文，同时也帮助他们深入理解该主题的高质量、易于理解的解释材料。
+
+\subsection{关于引用本入门指南}
+本指南并不包含关于 NLSE 的原创研究，应被视为详细笔记的集合。在撰写新的 NLSE 研究论文或学位论文时，不应将本指南作为引用来源。相反，请引用相关主题的最早期的原创文献，例如孤子研究时可引用~\cite{soliton_first_theory} 和~\cite{Soliton_experimental_first}。然而，如果目的是帮助读者熟悉 NLSE 以便更好地理解原创研究，则可以使用以下 BibTeX 格式引用本指南~\cite{NLSE_primer}：
+
+\begin{boxA}
+@misc\{NLSE\_primer,  \\  
+author = "O. Krarup", \\  
+title = "\{A Primer on the Nonlinear Schrödinger Equation\}", \\  
+note = "Commit SHA: 9f1b93a", \\  
+url = \{https://github.com/OleKrarup123/NLSE-primer/blob/main/NLSE\_primer.pdf\}\}  
+\end{boxA}
+
+请注意，由于本指南在 GitHub 上可自由获取且会持续更新，URL 应链接到最新版本，而 "Commit SHA" 应为引用时最新的提交版本号。    

@@ -1,0 +1,110 @@
+\documentclass[
+  normalmargins,
+  10pt,
+  openany,
+  onehalfspacing,
+  UTF8
+]{my-format}
+% packages
+\usepackage{ctex}
+\usepackage[colorlinks]{hyperref} % for links
+\usepackage[dvipsnames]{xcolor}
+\usepackage{acro}
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\input{Acronyms}
+\usepackage[many]{tcolorbox}    	% for COLORED BOXES (tikz and xcolor included)
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+\newcommand{\A}{\textcolor{red}{A}} 
+\newcommand{\E}{\textcolor{red}{E}} 
+\newcommand{\greencheck}{\textcolor{green}{\checkmark}}
+\newcommand{\redcross}{\textcolor{red}{x}}
+
+
+\newcommand{\betag}{\textcolor{ForestGreen}{\beta}} 
+\newcommand{\CITE}{\textcolor{magenta}{CITE?!?!?!?!?!}} 
+\newcommand{\real}{\mathfrak{Re}}
+\newcommand{\FT}{\mathfrak{F}}
+\newcommand{\IFT}{\mathfrak{F}^{-1}}
+
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx} % for embedding graphics
+\usepackage{booktabs} % for pretty tables
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18,width=11cm}
+\usetikzlibrary{math}
+\usepackage[all]{nowidow}
+\usepackage{pdflscape}
+\usepackage[final]{pdfpages}
+\usepackage{afterpage}
+\usepackage[nottoc]{tocbibind}
+\usepackage{amssymb}
+\usepackage{changepage}
+
+\newcommand{\degs}{^{\circ}}
+\newcommand{\inv}{$^{-1}$}
+
+
+% author data
+\author{Ole Krarup}
+\title{\Large 非线性薛定谔方程简明教程}
+\date{}
+
+\begin{document}
+ 
+  \frontmatter    
+        
+    \maketitle
+    \begin{center}
+        \text{\Large 很惭愧，只做了一点微小的贡献}
+    \end{center}
+    \begin{flushright}
+      \text{\Large 翻译：蓝睿博}
+    \end{flushright}
+    \begin{flushright}
+      \text{\Large 2024年，南京}
+    \end{flushright}
+    \addtocounter{page}{1}
+    
+   
+   
+    \addcontentsline{toc}{chapter}{Table of Contents}
+    \tableofcontents
+    
+    \listoffigures
+    \listoftables
+    
+    %\input{AcronymList}
+    %\printacronyms
+    %\addcontentsline{toc}{chapter}{List of Acronyms}
+    
+    \mainmatter
+    
+    \pagestyle{plain}
+    \input{ch-intro}
+    \input{ch-math}
+    \input{ch-attenuation}
+
+    \input{ch-dispersion}
+    \input{ch-spm}
+    \input{ch-FWM}
+    \input{ch-Raman}
+
+    \input{ch-solitons}
+    \input{ch-supercontinuum}
+    \input{ch-material}
+    
+  %\appendix
+    %\input{ap-code}
+  \backmatter
+  \bibliographystyle{unsrturl}%plainurl
+  \bibliography{refs.bib}
+  
+\end{document}

@@ -1,0 +1,133 @@
+\begin{thebibliography}{10}
+
+\bibitem{supercontinuum_original_paper}
+R.~R. Alfano and S.~L. Shapiro.
+\newblock Observation of self-phase modulation and small-scale filaments in crystals and glasses.
+\newblock {\em Phys. Rev. Lett.}, 24:592--594, Mar 1970.
+\newblock URL: \url{https://link.aps.org/doi/10.1103/PhysRevLett.24.592}, \href {https://doi.org/10.1103/PhysRevLett.24.592} {\path{doi:10.1103/PhysRevLett.24.592}}.
+
+\bibitem{NLSE_original}
+R.~Y. Chiao, E.~Garmire, and C.~H. Townes.
+\newblock Self-trapping of optical beams.
+\newblock {\em Phys. Rev. Lett.}, 13:479--482, Oct 1964.
+\newblock URL: \url{https://www.researchgate.net/publication/220030032_Self-Trapping_of_Optical_Beams}, \href {https://doi.org/10.1103/PhysRevLett.13.479} {\path{doi:10.1103/PhysRevLett.13.479}}.
+
+\bibitem{soliton_first_theory}
+Akira Hasegawa and Frederick Tappert.
+\newblock {Transmission of stationary nonlinear optical pulses in dispersive dielectric fibers. I. Anomalous dispersion}.
+\newblock {\em Applied Physics Letters}, 23(3):142--144, 08 1973.
+\newblock \href {https://arxiv.org/abs/https://pubs.aip.org/aip/apl/article-pdf/23/3/142/18428001/142\_1\_online.pdf} {\path{arXiv:https://pubs.aip.org/aip/apl/article-pdf/23/3/142/18428001/142\_1\_online.pdf}}, \href {https://doi.org/10.1063/1.1654836} {\path{doi:10.1063/1.1654836}}.
+
+\bibitem{Soliton_experimental_first}
+L.~F. Mollenauer, R.~H. Stolen, and J.~P. Gordon.
+\newblock Experimental observation of picosecond pulse narrowing and solitons in optical fibers.
+\newblock {\em Phys. Rev. Lett.}, 45:1095--1098, Sep 1980.
+\newblock URL: \url{https://ieeexplore.ieee.org/document/1070843}, \href {https://doi.org/10.1103/PhysRevLett.45.1095} {\path{doi:10.1103/PhysRevLett.45.1095}}.
+
+\bibitem{poggiolini2014detailedanalyticalderivationgn}
+Pierluigi Poggiolini, Gabriella Bosco, Andrea Carena, Vittorio Curri, Yanchao Jiang, and Fabrizio Forghieri.
+\newblock A detailed analytical derivation of the gn model of non-linear interference in coherent optical transmission systems, 2014.
+\newblock URL: \url{https://arxiv.org/abs/1209.0394}, \href {https://arxiv.org/abs/1209.0394} {\path{arXiv:1209.0394}}.
+
+\bibitem{NLSE_primer}
+O.~Krarup.
+\newblock {A Primer on the Nonlinear Schrödinger Equation}.
+\newblock Commit SHA: 9f1b93a.
+\newblock URL: \url{https://github.com/OleKrarup123/NLSE-primer/blob/main/NLSE_primer.pdf}.
+
+\bibitem{Chirp_STRICKLAND_Nobel_prize}
+Donna Strickland and Gerard Mourou.
+\newblock Compression of amplified chirped optical pulses.
+\newblock {\em Optics Communications}, 56(3):219--221, 1985.
+\newblock URL: \url{https://www.sciencedirect.com/science/article/pii/0030401885901208}, \href {https://doi.org/10.1016/0030-4018(85)90120-8} {\path{doi:10.1016/0030-4018(85)90120-8}}.
+
+\bibitem{Snell}
+Klaus Hentschel.
+\newblock Das {Brechungsgesetz} in der {Fassung} von {Snellius}.
+\newblock {\em Archive for History of Exact Sciences}, 55(4):297--344, January 2001.
+\newblock URL: \url{https://www.academia.edu/20607033/Das_Brechungsgesetz_in_der_Fassung_von_Snellius}, \href {https://doi.org/10.1007/s004070000026} {\path{doi:10.1007/s004070000026}}.
+
+\bibitem{Fourier_heat_original}
+J.B.J. Fourier.
+\newblock {\em Théorie analytique de la chaleur}.
+\newblock F.Didot, 1822.
+\newblock URL: \url{https://archive.org/details/bub_gb_TDQJAAAAIAAJ/page/n11/mode/2up}.
+
+\bibitem{Fourier_heat_english}
+J.B.J. Fourier.
+\newblock {\em Analytical Theory of Heat}.
+\newblock Cambridge University Press, 1878.
+\newblock URL: \url{https://www3.nd.edu/~powers/ame.20231/fourier1878.pdf}.
+
+\bibitem{zero_disp_measurement}
+S.E. Mechels, J.B. Schlager, and D.L. Franzen.
+\newblock Accurate measurements of the zero-dispersion wavelength in optical fibers.
+\newblock {\em Journal of Research of the National Institute of Standards and Technology}, 102(3):333, May 1997.
+\newblock URL: \url{https://nvlpubs.nist.gov/nistpubs/jres/102/3/j23mec.pdf}, \href {https://doi.org/10.6028/jres.102.023} {\path{doi:10.6028/jres.102.023}}.
+
+\bibitem{NIST_JA_expansion}
+{\it NIST Digital Library of Mathematical Functions}.
+\newblock http://dlmf.nist.gov/10.12, Release 1.0.27 of 2020-06-15.
+\newblock F.~W.~J. Olver, A.~B. {Olde Daalhuis}, D.~W. Lozier, B.~I. Schneider, R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders,H.~S. Cohl, and M.~A. McClain, eds.
+\newblock URL: \url{http://dlmf.nist.gov/10.12}.
+
+\bibitem{Boskovic_Original_Kerr_Effect}
+A.~Boskovic, S.~V. Chernikov, J.~R. Taylor, L.~Gruner-Nielsen, and O.~A. Levring.
+\newblock Direct continuous-wave measurement of n2 in various types of telecommunication fiber at 1.55 $\mu$m.
+\newblock {\em Opt. Lett.}, 21(24):1966--1968, Dec 1996.
+\newblock \href {https://doi.org/10.1364/OL.21.001966} {\path{doi:10.1364/OL.21.001966}}.
+
+\bibitem{my_thesis}
+Ole Krarup.
+\newblock {\em Enhancement of Fiber Optical Environmental Sensor Performance Via All-Optical Signal Processing}.
+\newblock PhD thesis, University of Ottawa, 03 2024.
+\newblock URL: \url{https://doi.org/10.20381/ruor-30193}.
+
+\bibitem{BenoitPhD}
+Benoit Vanus.
+\newblock {\em All-Optical Signal Processing Using the Kerr Effect for Fiber-Based Sensors}.
+\newblock PhD thesis, University of Ottawa, 10 2021.
+\newblock URL: \url{https://ruor.uottawa.ca/handle/10393/42827?mode=full}.
+
+\bibitem{YangLuPhD}
+Yang Lu.
+\newblock {\em Study of the Kerr Phase-Interrogator and Its Applications}.
+\newblock PhD thesis, University of Ottawa, 11 2015.
+\newblock URL: \url{https://ruor.uottawa.ca/handle/10393/33376?mode=full}.
+
+\bibitem{Raman_original}
+C.~V. Raman.
+\newblock A new radiation [reproduced from indian j. phys., 1928, 2, 387–398].
+\newblock {\em Current Science}, 74(4):382--386, 1998.
+\newblock URL: \url{http://www.jstor.org/stable/24101519}.
+
+\bibitem{raman_exact}
+Dawn Hollenbeck and Cyrus Cantrell.
+\newblock Multiple-vibrational-mode model for fiber-optic raman gain spectrum and response function.
+\newblock {\em Journal of the Optical Society of America B}, 19:2886, 12 2002.
+\newblock \href {https://doi.org/10.1364/JOSAB.19.002886} {\path{doi:10.1364/JOSAB.19.002886}}.
+
+\bibitem{Similariton_evolution}
+Vladimir~I. Kruglov and John~D. Harvey.
+\newblock Asymptotically exact parabolic solutions of the generalized nonlinear schr\"{o}dinger equation with varying parameters.
+\newblock {\em J. Opt. Soc. Am. B}, 23(12):2541--2550, Dec 2006.
+\newblock URL: \url{https://www.academia.edu/73198213/Asymptotically_exact_parabolic_solutions_of_the_generalized_nonlinear_Schr%C3%B6dinger_equation_with_varying_parameters}, \href {https://doi.org/10.1364/JOSAB.23.002541} {\path{doi:10.1364/JOSAB.23.002541}}.
+
+\bibitem{AGRAWAL_CH6_POL}
+Govind Agrawal.
+\newblock Chapter 6 - polarization effects.
+\newblock In Govind Agrawal, editor, {\em Nonlinear Fiber Optics (Fifth Edition)}, Optics and Photonics, pages 193--244. {Academic Press}, {Boston}, fifth edition edition, 2013.
+\newblock \href {https://doi.org/10.1016/B978-0-12-397023-7.00006-1} {\path{doi:10.1016/B978-0-12-397023-7.00006-1}}.
+
+\bibitem{supercontinuum_paper}
+Ruifeng Chen, Kaiwen Yi, Yuanqiang Peng, Baoying Zou, and Weiyi Hong.
+\newblock The supercontinuum generation with pearcey-gaussian pulses in an optical fiber.
+\newblock {\em Results in Physics}, 18:103255, 2020.
+\newblock URL: \url{https://www.sciencedirect.com/science/article/pii/S2211379720317228}, \href {https://doi.org/10.1016/j.rinp.2020.103255} {\path{doi:10.1016/j.rinp.2020.103255}}.
+
+\bibitem{redman2021gnlsepythonopensourcesoftware}
+Paweł Redman, Magdalena Zatorska, Adam Pawłowski, Daniel Szulc, Sylwia Majchrowska, and Karol Tarnowski.
+\newblock gnlse-python: Open source software to simulate nonlinear light propagation in optical fibers, 2021.
+\newblock URL: \url{https://arxiv.org/abs/2110.00298}, \href {https://arxiv.org/abs/2110.00298} {\path{arXiv:2110.00298}}.
+
+\end{thebibliography}

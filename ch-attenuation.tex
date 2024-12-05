@@ -1,0 +1,114 @@
+\chapter{损耗和增益}
+\label{ch:attenuation}
+
+
+光在玻璃介质中传播时会自然衰减，因为杂质或晶格缺陷可能会将部分电磁场散射离开原来的传播方向。由于如果光的强度较低，非线性光学效应的影响会减小，因此理解衰减的影响对于理解方程~\ref{eq:GNLSE} 至关重要。
+
+
+\section{损耗的物理起源}
+当光线在波导（如光纤）中传播时，玻璃中的化学杂质、晶格中的晶体缺陷或波导中的紧密弯曲会导致衰减。此外，如果光的载波频率与晶格中化学键的振动频率相匹配，光就可以直接转化为热量。有关光如何在理想介质中传播的直观图片，请参阅 \href{https://www.youtube.com/watch?v=QCX62YJCmGk&list=PLZHQObOWTQDMKqfyUvG2kTlYt-QQ2x-ui}{本视频系列}。
+
+
+\section{损耗的描述}
+
+考虑公式 ~\ref{eq:GNLSE}，其中除了 $\alpha$ 之外的所有参数都等于零，在这种情况下
+
+\begin{align}
+    \label{eq:attenuation}
+    \partial_z\A &= \frac{\alpha}{2} \A \\ \nonumber
+    \A(z,T)&=\A(0,T)\exp\left( \frac{\alpha}{2}z \right). 
+\end{align}
+
+当 $\alpha<0$ 时，公式~\ref{eq:attenuation}意味着场会随距离衰减，而 $\alpha>0$ 则意味着场会增益。请注意，场的功率与场的绝对平方成正比，因此
+
+\begin{align}
+    \label{eq:attenuation_power}
+    P(z,t)=|\A(z,t)|^2&=|\A(0,t)|^2 \exp\left( \alpha z \right). 
+\end{align}
+在公式 ~\ref{eq:GNLSE}、公式 ~\ref{eq:attenuation}和公式 ~\ref{eq:attenuation_power}中，$\alpha$是 “功率损耗系数”，它决定了场的\emph{总功率}在传播一定距离后发生了多少因数的变化。其他作者将 $\alpha$ 定义为“场损耗系数”，其决定了\emph{场}在传播一定距离后发生的 $e$ 的$-\alpha L$次方的变化量。在这种情况下，方程~\ref{eq:attenuation_power} 中的指数部分将包含 $2\alpha z$，而不是 $\alpha z$。
+
+\section{dB的单位换算}
+\begin{table}[]
+    \centering
+    \begin{tabular}{ c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c }
+\label{tab:dB}
+ 缩放因子 &0.01&0.05 & 0.1 &0.125 &0.25&0.4 &0.5 & 0.8&1&1.25 &2 &2.5 &4 &8 &10 &20 & \\  \hline
+ dB change & -20 &-13 &-10 & -9&  -6&-4& -3&-1&0&1 &3 &4 &6 &9 & 10&13 
+\end{tabular}
+    \caption{缩放因子和相应变化（以 dB 为单位）的示例。}
+    \label{tab:dB}
+\end{table}
+
+在实际应用中，通常以 “分贝”（dB）为单位报告衰减或增益。例如，如果一个信号最初的功率为 60~mW，而通过介质传播后的功率仅为 130~$\mu$W，则其功率变化了
+
+\begin{align}
+    \Delta P [dB] &= 10 \log_{10}\left(\frac{P_{final}}{P_{initial}} \right)= 10 \log_{10}\left(\frac{0.130 mW}{60 mW} \right) = -26.64 dB.
+\end{align}
+反之，如果功率再提升 15 分贝，则新功率为
+\begin{align}
+\label{eq:boost}
+    P_{final}&=P_{initial}\cdot10^{\frac{\Delta dB}{10}}=0.13mW\cdot10^{\frac{15}{10}} = 4.11 mW.
+\end{align}
+
+
+注意，$10\log_{10}(10)=10$~dB，$10\log_{10}(0.1)=-10$~dB，$10\log_{10}(2)\approx3$~dB，且 $10\log_{10}(0.5)\approx-3$~dB。因此，如果功率放大了 $20=10\cdot 2$ 倍，这相当于增大了 $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$~dB。更多示例参见表~\ref{tab:dB}。
+
+以下是上述内容的翻译：
+
+衰减系数 $\alpha$ 通常以 dB/km 为单位表示。例如，通信用单模光纤在 193~THz 附近（对应波长约为 1550~nm）的典型衰减系数为 $-0.22$ dB/km。这意味着一根 100 公里的光纤将使光功率变化 $-22$ dB，对应于功率约减少 158.5 倍。如果 $\alpha=-0.22$ dB/km，则在方程~\ref{eq:GNLSE} 中使用的 $\alpha$ 值（以 “每公里的 e 次方衰减” 为单位，假设 $z$ 以公里为单位）可以通过以下方法计算：
+\begin{align}
+    \exp\left(\alpha_{\text{Factors of $e$ per km}}z\right) &= 10^{ \frac{\alpha_{dB/km}}{10}z} \\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}}z &= \ln\left(10^{ \frac{\alpha_{dB/km}}{10}z} \right)\\ \nonumber
+    &= \frac{\alpha_{dB/km}}{10}z \ln(10)\\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}} &= 0.23\cdot \alpha_{dB/km}\\ \nonumber
+    \alpha_{\text{Factors of $e$ per km}}\cdot4.343&=\alpha_{dB/km}.
+\end{align}
+
+
+\section{在dBm下测量功率}
+
+光信号的功率通常以“dBm”为单位表示，这代表相对于“毫瓦（mW）”的分贝功率。例如，40~mW 对应于
+
+\begin{align}
+    P [dBm] &= 10\cdot\log_{10}\left(\frac{40mW}{1mW} \right)=16dBm,
+\end{align}
+反之亦然
+\begin{align}
+    \label{eq:dBm_rev}
+    P [mW] &= 10^{\frac{16dBm}{10}}mW=40mW.
+\end{align}
+
+使用“dBm”很方便，因为尽管信号较弱，几纳瓦的信号仍可被探测到，而经过\href{https://youtu.be/Eh5CHRWFT-M}{啁啾脉冲放大}等处理后的脉冲峰值功率可以达到兆瓦甚至吉瓦量级~\cite{Chirp_STRICKLAND_Nobel_prize}。它还使得损耗和增益的影响计算比使用方程~\ref{eq:boost} 更为简单，因为一个初始功率为 $0.13$~mW=$-8.86$~dBm 的信号，若增益为 15~dB，则最终功率为 $-8.86~dBm+15~dB=6.13$~dBm。
+
+
+\section{常见的 dB 和 dBm 错误}
+
+\begin{enumerate}
+    \item \textbf{将 dBm 相加}：Alice 想确定两个激光器的总功率，以 dBm 为单位。她测得第一个激光器的功率为 3 dBm，第二个激光器的功率为 6 dBm。
+    \begin{itemize}
+    \item[\redcross] Alice 计算 $P_{tot} [dBm] = 3 dBm + 6 dBm = 9 dBm$，这是错误的，因为 3~dBm = 2~mW 且 6~dBm = 4~mW，但 9~dBm = 8~mW。直接相加 dBm 值对应于将线性单位下的功率相乘：$2~mW \cdot 4~mW = 8~mW^2$！
+    \item[\greencheck] Alice 首先将两个测量值转换为线性单位（3~dBm=2~mW，6~dBm = 4~mW）。然后，她将线性值相加得到总功率 6~mW，最后将结果转换为 dBm：$10 \cdot \log_{10}(6mW/1mW) = 7.78~dBm$。
+    \end{itemize}
+
+    \item \textbf{混淆 dB 和 dBm}：Bob 想知道某个激光器的功率（以 mW 为单位）。他的同事报告测得功率为“13~dB”。
+    \begin{itemize}
+    \item[\redcross] Bob 将 $13~dB$ 代入方程~\ref{eq:dBm_rev} 而不是 $16~dBm$，并得到结果 $20~mW$。这是错误的，因为“13~dB”是无量纲比值，而不是功率的度量！
+    \item[\greencheck] Bob 询问同事是否实际上是指“13~dBm”。同事可能只是口误，但也有可能是由于功率计的显示模式设置错误，因此报告了相对于某个预设值的当前功率，导致显示“13~dB”。
+    \end{itemize}
+
+   \item \textbf{另一种混淆 dB 和 dBm}：Charlie 测得某激光器的功率为 10~dBm。他的同事要求他将功率降低“3~dBm”。
+    \begin{itemize}
+    \item[\redcross] Charlie 将输出功率从 10~dBm 调至 7~dBm。这是错误的，因为他减少了 3~dB，而“3~dBm”意味着减少 2~mW。
+    \item[\greencheck] Charlie 询问同事是否是指减少 3~dB，或确实希望减少 2~mW。前者更有可能，因为后者（严格来说并非错误）是一种不常用且可能引起混淆的术语使用方式。
+    \end{itemize}
+    
+    \item \textbf{不正确的平均值计算}：David 想确定三个激光器的平均功率，以 dBm 为单位，分别为 -1~dBm、4~dBm 和 6~dBm。
+    \begin{itemize}
+    \item[\redcross] David 计算 $P_{avg}=(-1~dBm+4~dBm+6~dBm)/3=4~dBm$。这样做并没有得到“常规”平均值，而是三个值的\href{https://en.wikipedia.org/wiki/Geometric_mean}{几何平均值}：$(-1~dBm+4~dBm+6~dBm)/3 = (0.79~mW \cdot 2.51~mW \cdot 7.94~mW)^{1/3}=2.5~mW = 4~dBm$。在某些情况下此值有一定参考意义，但这并不是 David 想要的“常规平均值”！例如，当一个大团队希望表征其光学产品的性能以便销售时，验证功率平均值的计算是否一致非常重要！
+    \item[\greencheck] David 将三个功率转换为线性单位，计算平均值为 $(0.79~mW+2.51~mW+7.94~mW)/3=3.75~mW=5.74~dBm$。
+    \end{itemize}
+    
+\end{enumerate}
+
+
+
