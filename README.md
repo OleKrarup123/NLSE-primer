@@ -1,1 +1,1 @@
-This repo contains the LaTeX source for my primer on the Nonlinear Schrodinger Equation, which is essential for modelling nonlinear optical phenomena. It is intended to provide graduate students or advanced undergraduates with an intuitive explanation of different concepts and phenomena. It also links to various useful ressources.
+此资源库包含汉化的非线性薛定谔方程入门教程的 LaTeX 源文件，该入门教程对非线性光学现象建模至关重要。它旨在为研究生或高年级本科生提供不同概念和现象的直观解释。它还链接了各种有用的资源。
