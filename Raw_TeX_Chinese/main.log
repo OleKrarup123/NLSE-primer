@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.3)  5 DEC 2024 20:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.3)  5 SEP 2025 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,6 +1073,9 @@ Underfull \vbox (badness 3343) has occurred while \output is active []
 [7
 
 ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [8])
 \tf@lof=\write6
@@ -1185,7 +1188,7 @@ Chapter 4.
 <figures/bandwidth.png, id=861, 1248.16313pt x 946.28531pt>
 File: figures/bandwidth.png Graphic file (type png)
 <use figures/bandwidth.png>
-Package pdftex.def Info: figures/bandwidth.png  used on input line 21.
+Package pdftex.def Info: figures/bandwidth.png  used on input line 19.
 (pdftex.def)             Requested size: 433.62003pt x 328.73573pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1199,59 +1202,59 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [13 <./figures/bandwidth.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 44.
+(hyperref)                removing `math shift' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 44.
+(hyperref)                removing `\beta' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 44.
+(hyperref)                removing `subscript' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 44.
+(hyperref)                removing `math shift' on input line 42.
 
 
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 72.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 74.
+(hyperref)                removing `\beta' on input line 72.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 74.
+(hyperref)                removing `subscript' on input line 72.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 74.
+(hyperref)                removing `math shift' on input line 72.
 
 
-Overfull \hbox (2.40073pt too wide) in paragraph at lines 90--91
+Overfull \hbox (2.40073pt too wide) in paragraph at lines 88--89
 []\C70/rm/m/n/12/51 s \C70/rm/m/n/12/4e Ž \C70/rm/m/n/12/76 ø \C70/rm/m/n/12/4f M \C70/rm/m/n/12/90 ^^_ \C70/rm/m/n/12/5e ¦ \C70/rm/m/n/12/54 Œ \C70/rm/m/n/12/7f ¤ \C70/rm/m/n/12/90 ^^_ \C70/rm/m/n/12/5e ¦ \C70/rm/m/n/12/4e K \C70/rm/m/n/12/95 ô \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/53 : \C70/rm/m/n/12/52 +|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/8b ÷ \C70/rm/m/n/12/53 Â \C70/rm/m/n/12/89 Á [][]\C70/rm/m/n/12/6b d \C70/rm/m/n/12/4e ¤ ’ \C70/rm/m/n/12/5f ^^O \C70/rm/m/n/12/56 þ \C70/rm/m/n/12/88 h[][]|\C70/rm/m/n/12/30 ^^B| \C70/rm/m/n/12/8b ÷ \C70/rm/m/n/12/6c è \C70/rm/m/n/12/61 ^^O|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/51 l \C70/rm/m/n/12/5f ^^O [][]\OT1/cmr/m/n/12 4.8[][]\C70/rm/m/n/12/4e ^^N
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 95.
+(hyperref)                removing `\beta' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 95.
+(hyperref)                removing `subscript' on input line 93.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 95.
+(hyperref)                removing `math shift' on input line 93.
 
 
 Underfull \vbox (badness 2334) has occurred while \output is active []
@@ -1263,56 +1266,56 @@ Underfull \vbox (badness 2334) has occurred while \output is active []
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
+(hyperref)                removing `math shift' on input line 150.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 152.
+(hyperref)                removing `\beta' on input line 150.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 152.
+(hyperref)                removing `subscript' on input line 150.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
+(hyperref)                removing `math shift' on input line 150.
 
 
-Overfull \hbox (8.5765pt too wide) in paragraph at lines 154--155
+Overfull \hbox (8.5765pt too wide) in paragraph at lines 152--153
 \C70/rm/m/n/12/73 ‡ \C70/rm/m/n/12/51 ³ \C70/rm/m/n/12/5b š \C70/rm/m/n/12/81 	 \C70/rm/m/n/12/51 ² \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/65 ö \C70/rm/m/n/12/95 ô \C70/rm/m/n/12/5c U \C70/rm/m/n/12/5b ½ \C70/rm/m/n/12/4e K \C70/rm/m/n/12/54 ^^N|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/4e › \C70/rm/m/n/12/89 Á ã \C70/rm/m/n/12/53 ï \C70/rm/m/n/12/4e å \C70/rm/m/n/12/5f — \C70/rm/m/n/12/52 0 \C70/rm/m/n/12/63 ¨ \C70/rm/m/n/12/5e ^^?|\C70/rm/m/n/12/30 ^^B| \C70/rm/m/n/12/4f ‹ \C70/rm/m/n/12/59 ‚|\C70/rm/m/n/12/ff ^^L| $[][][] \OML/cmm/m/it/12 > \OT1/cmr/m/n/12 0$ \C70/rm/m/n/12/61 ^^O \C70/rm/m/n/12/54 s \C70/rm/m/n/12/77 @$\OML/cmm/m/it/12 i[][][]=\OT1/cmr/m/n/12 6(\OML/cmm/m/it/12 ! \OMS/cmsy/m/n/12 ^^@
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
+(hyperref)                removing `math shift' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 164.
+(hyperref)                removing `\alpha' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 164.
+(hyperref)                removing `\omega' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
+(hyperref)                removing `math shift' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
+(hyperref)                removing `math shift' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 164.
+(hyperref)                removing `\beta' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 164.
+(hyperref)                removing `\omega' on input line 162.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
+(hyperref)                removing `math shift' on input line 162.
 
 
 
@@ -1320,7 +1323,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <figures/dispersion_combined.png, id=945, 1769.86218pt x 3119.655pt>
 File: figures/dispersion_combined.png Graphic file (type png)
 <use figures/dispersion_combined.png>
-Package pdftex.def Info: figures/dispersion_combined.png  used on input line 174.
+Package pdftex.def Info: figures/dispersion_combined.png  used on input line 172.
 (pdftex.def)             Requested size: 325.21501pt x 573.22379pt.
 ) (./ch-spm.tex
 
@@ -1414,12 +1417,8 @@ File: figures/XPM_combined.png Graphic file (type png)
 Package pdftex.def Info: figures/XPM_combined.png  used on input line 117.
 (pdftex.def)             Requested size: 346.89734pt x 563.62828pt.
 
-
-LaTeX Warning: Reference `subsec:sidebands' on page 31 undefined on input line 129.
-
-
-Overfull \hbox (14.26758pt too wide) in paragraph at lines 129--130
-[]\C70/rm/m/n/12/5c ^^O \C70/rm/m/n/12/82 ‚ []\C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/63 ¨ \C70/rm/m/n/12/5b ü \C70/rm/m/n/12/50 G \C70/rm/m/n/12/5b š \C70/rm/m/n/12/82 r \C70/rm/m/n/12/65 c \C70/rm/m/n/12/53 ï \C70/rm/m/n/12/4e å \C70/rm/m/n/12/5f ý \C70/rm/m/n/12/75 e \C70/rm/m/n/12/4e ^^M \C70/rm/m/n/12/8b ¡|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5c ^^O$\OML/cmm/m/it/12 ![]$\C70/rm/m/n/12/50 < \C70/rm/m/n/12/54 Œ \C70/rm/m/n/12/8f } \C70/rm/m/n/12/6c â \C70/rm/m/n/12/98 ‘ \C70/rm/m/n/12/73 ‡ \C70/rm/m/n/12/63 ¥ \C70/rm/m/n/12/8f Ñ \C70/rm/m/n/12/5c ^^O \C70/rm/m/n/12/82 ‚ [][]\OT1/cmr/m/n/12 4.4.1[][]\C70/rm/m/n/12/4e -
+Overfull \hbox (16.53131pt too wide) in paragraph at lines 129--130
+[]\C70/rm/m/n/12/5c ^^O \C70/rm/m/n/12/82 ‚ [][]\OT1/cmr/m/n/12 6.2[][]\C70/rm/m/n/12/4e - \C70/rm/m/n/12/76 „ \C70/rm/m/n/12/63 ¨ \C70/rm/m/n/12/5b ü \C70/rm/m/n/12/50 G \C70/rm/m/n/12/5b š \C70/rm/m/n/12/82 r \C70/rm/m/n/12/65 c \C70/rm/m/n/12/53 ï \C70/rm/m/n/12/4e å \C70/rm/m/n/12/5f ý \C70/rm/m/n/12/75 e \C70/rm/m/n/12/4e ^^M \C70/rm/m/n/12/8b ¡|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/8f Ù \C70/rm/m/n/12/66 / \C70/rm/m/n/12/5c ^^O$\OML/cmm/m/it/12 ![]$\C70/rm/m/n/12/50 < \C70/rm/m/n/12/54 Œ \C70/rm/m/n/12/8f } \C70/rm/m/n/12/6c â \C70/rm/m/n/12/98 ‘ \C70/rm/m/n/12/73 ‡ \C70/rm/m/n/12/63 ¥ \C70/rm/m/n/12/8f Ñ \C70/rm/m/n/12/5c ^^O \C70/rm/m/n/12/82 ‚ [][]\OT1/cmr/m/n/12 4.4.1[][]\C70/rm/m/n/12/4e -
  []
 
 
@@ -1430,7 +1429,7 @@ Underfull \vbox (badness 7344) has occurred while \output is active []
 [31]
 
 [32 <./figures/XPM_combined.png>]
-<figures/MI_combined.png, id=1156, 1764.5925pt x 3133.20563pt>
+<figures/MI_combined.png, id=1157, 1764.5925pt x 3133.20563pt>
 File: figures/MI_combined.png Graphic file (type png)
 <use figures/MI_combined.png>
 Package pdftex.def Info: figures/MI_combined.png  used on input line 143.
@@ -1473,7 +1472,7 @@ Overfull \hbox (10.83015pt too wide) in paragraph at lines 46--48
  \C70/rm/m/n/12/91 Í \C70/rm/m/n/12/56 à \C70/rm/m/n/12/67 œ \C70/rm/m/n/12/51 s \C70/rm/m/n/12/7c û|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/62 @ \C70/rm/m/n/12/67 	 \C70/rm/m/n/12/52 ^^W \C70/rm/m/n/12/51 ú \C70/rm/m/n/12/76 „ $\OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 )$\C70/rm/m/n/12/88 h
  []
 
-<figures/Raman_combined.png, id=1211, 1778.14313pt x 2071.74pt>
+<figures/Raman_combined.png, id=1212, 1778.14313pt x 2071.74pt>
 File: figures/Raman_combined.png Graphic file (type png)
 <use figures/Raman_combined.png>
 Package pdftex.def Info: figures/Raman_combined.png  used on input line 88.
@@ -1486,7 +1485,7 @@ Package pdftex.def Info: figures/Raman_combined.png  used on input line 88.
 
 [39]
 Chapter 8.
-<figures/gauss_sech_comparison.png, id=1245, 1202.99437pt x 1558.32187pt>
+<figures/gauss_sech_comparison.png, id=1246, 1202.99437pt x 1558.32187pt>
 File: figures/gauss_sech_comparison.png Graphic file (type png)
 <use figures/gauss_sech_comparison.png>
 Package pdftex.def Info: figures/gauss_sech_comparison.png  used on input line 25.
@@ -1496,7 +1495,7 @@ Package pdftex.def Info: figures/gauss_sech_comparison.png  used on input line 2
 [40
 
 ]
-<figures/Soliton_comparison.png, id=1263, 1657.69313pt x 1367.1075pt>
+<figures/Soliton_comparison.png, id=1264, 1657.69313pt x 1367.1075pt>
 File: figures/Soliton_comparison.png Graphic file (type png)
 <use figures/Soliton_comparison.png>
 Package pdftex.def Info: figures/Soliton_comparison.png  used on input line 40.
@@ -1511,7 +1510,7 @@ Underfull \vbox (badness 3826) has occurred while \output is active []
 [42 <./figures/gauss_sech_comparison.png>]
 
 [43 <./figures/Soliton_comparison.png>]
-<figures/OWB_and_similariton.png, id=1288, 868.74562pt x 2353.29187pt>
+<figures/OWB_and_similariton.png, id=1289, 868.74562pt x 2353.29187pt>
 File: figures/OWB_and_similariton.png Graphic file (type png)
 <use figures/OWB_and_similariton.png>
 Package pdftex.def Info: figures/OWB_and_similariton.png  used on input line 57.
@@ -1521,7 +1520,7 @@ Package pdftex.def Info: figures/OWB_and_similariton.png  used on input line 57.
 [44]
 
 [45 <./figures/OWB_and_similariton.png>]
-<figures/dark_and_raman_soliton_combined.png, id=1306, 1723.94063pt x 1463.4675pt>
+<figures/dark_and_raman_soliton_combined.png, id=1307, 1723.94063pt x 1463.4675pt>
 File: figures/dark_and_raman_soliton_combined.png Graphic file (type png)
 <use figures/dark_and_raman_soliton_combined.png>
 Package pdftex.def Info: figures/dark_and_raman_soliton_combined.png  used on input line 78.
@@ -1545,7 +1544,7 @@ Overfull \hbox (0.72482pt too wide) in paragraph at lines 8--18
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 26.
 
-<figures/SC_combined.png, id=1336, 1537.24312pt x 2141.75156pt>
+<figures/SC_combined.png, id=1337, 1537.24312pt x 2141.75156pt>
 File: figures/SC_combined.png Graphic file (type png)
 <use figures/SC_combined.png>
 Package pdftex.def Info: figures/SC_combined.png  used on input line 55.
@@ -1573,12 +1572,12 @@ Chapter 10.
 [54]
 
 [55] (./main.bbl
-Underfull \hbox (badness 2828) in paragraph at lines 10--14
+Underfull \hbox (badness 2828) in paragraph at lines 22--26
 \OT1/cmtt/m/n/12 publication / 220030032 _ Self-[]Trapping _ of _ Optical _ Beams$[][]\OT1/cmr/m/n/12 , [][]$\OT1/cmtt/m/n/12 doi : 10 . 1103 /
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 16--20
+Underfull \hbox (badness 2828) in paragraph at lines 28--32
 \OT1/cmtt/m/n/12 apl / article-[]pdf / 23 / 3 / 142 / 18428001 / 142 \ _1 \ _online . pdf$[][]\OT1/cmr/m/n/12 , [][]$\OT1/cmtt/m/n/12 doi : 10 . 1063 /
  []
 
@@ -1588,34 +1587,34 @@ Underfull \hbox (badness 2828) in paragraph at lines 16--20
 
 
 ]
-Underfull \hbox (badness 3679) in paragraph at lines 45--49
+Underfull \hbox (badness 3679) in paragraph at lines 57--61
 []\OT1/cmr/m/n/12 Klaus Hentschel.  Das Brechungs-ge-setz in der Fas-sung von Snel-lius.
  []
 
 
-Underfull \hbox (badness 5460) in paragraph at lines 45--49
+Underfull \hbox (badness 5460) in paragraph at lines 57--61
 \OT1/cmr/m/it/12 Archive for His-tory of Ex-act Sci-ences\OT1/cmr/m/n/12 , 55(4):297--344, Jan-uary 2001.
  []
 
 
 
 [57]
-Underfull \hbox (badness 1701) in paragraph at lines 111--115
+Underfull \hbox (badness 1701) in paragraph at lines 117--121
 \OT1/cmr/m/n/12 so-lu-tions of the gen-er-al-ized non-lin-ear schr^^?odinger equa-tion with vary-ing
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 111--115
+Underfull \hbox (badness 1248) in paragraph at lines 117--121
 \OT1/cmr/m/n/12 pa-ram-e-ters.  \OT1/cmr/m/it/12 J. Opt. Soc. Am. B\OT1/cmr/m/n/12 , 23(12):2541--2550, Dec 2006.  URL:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 [][]$\OT1/cmtt/m/n/12 https : / / www . academia . edu / 73198213 / Asymptotically _ exact _ parabolic _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
 \OT1/cmtt/m/n/12 solutions _ of _ the _ generalized _ nonlinear _ Schr % C3 % B6dinger _ equation _
  []
 
@@ -1631,27 +1630,24 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 63809AF7F14CB864056917175407D8F2;7148.
  ) 
 Here is how much of TeX's memory you used:
- 48607 strings out of 473382
- 1177030 string characters out of 5725273
+ 48606 strings out of 473382
+ 1177012 string characters out of 5725273
  1638074 words of memory out of 5000000
- 70152 multiletter control sequences out of 15000+600000
+ 70151 multiletter control sequences out of 15000+600000
  676370 words of font info for 470 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,15n,121p,1312b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simkai.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (67 pages, 19944357 bytes).
+Output written on main.pdf (67 pages, 19944426 bytes).
 PDF statistics:
- 2137 PDF objects out of 2487 (max. 8388607)
- 1718 compressed objects within 18 object streams
+ 2133 PDF objects out of 2487 (max. 8388607)
+ 1714 compressed objects within 18 object streams
  277 named destinations out of 1000 (max. 500000)
  916 words of extra memory for PDF output out of 10000 (max. 10000000)
 

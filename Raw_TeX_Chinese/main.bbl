@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{raman_exact}
+Dawn Hollenbeck and Cyrus Cantrell.
+\newblock Multiple-vibrational-mode model for fiber-optic raman gain spectrum and response function.
+\newblock {\em Journal of the Optical Society of America B}, 19:2886, 12 2002.
+\newblock \href {https://doi.org/10.1364/JOSAB.19.002886} {\path{doi:10.1364/JOSAB.19.002886}}.
+
+\bibitem{supercontinuum_paper}
+Ruifeng Chen, Kaiwen Yi, Yuanqiang Peng, Baoying Zou, and Weiyi Hong.
+\newblock The supercontinuum generation with pearcey-gaussian pulses in an optical fiber.
+\newblock {\em Results in Physics}, 18:103255, 2020.
+\newblock URL: \url{https://www.sciencedirect.com/science/article/pii/S2211379720317228}, \href {https://doi.org/10.1016/j.rinp.2020.103255} {\path{doi:10.1016/j.rinp.2020.103255}}.
+
 \bibitem{supercontinuum_original_paper}
 R.~R. Alfano and S.~L. Shapiro.
 \newblock Observation of self-phase modulation and small-scale filaments in crystals and glasses.
@@ -101,12 +113,6 @@ C.~V. Raman.
 \newblock {\em Current Science}, 74(4):382--386, 1998.
 \newblock URL: \url{http://www.jstor.org/stable/24101519}.
 
-\bibitem{raman_exact}
-Dawn Hollenbeck and Cyrus Cantrell.
-\newblock Multiple-vibrational-mode model for fiber-optic raman gain spectrum and response function.
-\newblock {\em Journal of the Optical Society of America B}, 19:2886, 12 2002.
-\newblock \href {https://doi.org/10.1364/JOSAB.19.002886} {\path{doi:10.1364/JOSAB.19.002886}}.
-
 \bibitem{Similariton_evolution}
 Vladimir~I. Kruglov and John~D. Harvey.
 \newblock Asymptotically exact parabolic solutions of the generalized nonlinear schr\"{o}dinger equation with varying parameters.
@@ -118,12 +124,6 @@ Govind Agrawal.
 \newblock Chapter 6 - polarization effects.
 \newblock In Govind Agrawal, editor, {\em Nonlinear Fiber Optics (Fifth Edition)}, Optics and Photonics, pages 193--244. {Academic Press}, {Boston}, fifth edition edition, 2013.
 \newblock \href {https://doi.org/10.1016/B978-0-12-397023-7.00006-1} {\path{doi:10.1016/B978-0-12-397023-7.00006-1}}.
-
-\bibitem{supercontinuum_paper}
-Ruifeng Chen, Kaiwen Yi, Yuanqiang Peng, Baoying Zou, and Weiyi Hong.
-\newblock The supercontinuum generation with pearcey-gaussian pulses in an optical fiber.
-\newblock {\em Results in Physics}, 18:103255, 2020.
-\newblock URL: \url{https://www.sciencedirect.com/science/article/pii/S2211379720317228}, \href {https://doi.org/10.1016/j.rinp.2020.103255} {\path{doi:10.1016/j.rinp.2020.103255}}.
 
 \bibitem{redman2021gnlsepythonopensourcesoftware}
 Paweł Redman, Magdalena Zatorska, Adam Pawłowski, Daniel Szulc, Sylwia Majchrowska, and Karol Tarnowski.

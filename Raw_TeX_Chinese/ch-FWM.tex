@@ -73,7 +73,7 @@
 \label{eq:sideband_approx}
     |\A_n(L,T)|^2 &\approx P_b\frac{(\gamma^2 L^2P_aP_b)^{n}}{n!^2},
 \end{align}
-since
+在这里，
 \begin{align}
 \label{eq:Bessel_approx}
     J_n(x)&\approx \frac{1}{n!}\left(\frac{x}{2}\right)^n
@@ -83,7 +83,7 @@ since
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{figures/FWM_combined.png}
-    \caption{a) 当两个相距 5~GHz 的频率（$P_b=100P_a$）在介质中传播时，数值计算的初始和最终频谱，其中 $\phi_{NL}=2\gamma L\sqrt{P_aP_b}=1.08$~rad. b) 与 a) 相同，但 $\phi_{NL}=2\gamma L\sqrt{P_aP_b}=7.2$~rad. c) 根据数值模拟和公式~\ref{eq:sideband_power}，边带功率归一化为 $P_b$ 的比较。 d) 与 c) 类似，但绘制了双对数刻度与 $\phi_{NL}$ 的关系图，以展示公式~\ref{eq:sideband_approx}预测的缩放行为。这些图是使用 \href{https://colab.research.google.com/drive/1l054EDg-50aK5GORN_md4_-tlFy4jwC5?usp=sharing}{这个交互式笔记本}生成的，我们鼓励读者尝试使用。   }
+    \caption{a) 当两个相距 5~GHz 的频率（$P_b=100P_a$）在介质中传播时，数值计算的初始和最终频谱，其中 $\phi_{NL}=2\gamma L\sqrt{P_aP_b}=1.08$~rad. b) 与 a) 相同，但 $\phi_{NL}=2\gamma L\sqrt{P_aP_b}=7.2$~rad. c) 根据数值模拟和公式~\ref{eq:sideband_power}，边带功率归一化为 $P_b$ 的比较。 d) 与 c) 类似，但绘制了双对数刻度与 $\phi_{NL}$ 的关系图，以展示公式~\ref{eq:sideband_approx}预测的缩放行为。这些图是使用 \href{https://colab.research.google.com/drive/1l054EDg-50aK5GORN_md4_-tlFy4jwC5?usp=sharing}{这个交互式NOTEBOOK}生成的，我们鼓励读者尝试使用。   }
     \label{fig:FWM}
 \end{figure} 
 
@@ -115,7 +115,7 @@ since
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/XPM_combined.png}
-    \caption{图示 SPM 和 XPM 对光信号相位的不同影响。 a) 低功率 CW 信号与两个相同的高功率高斯脉冲重叠的时域表示，这两个脉冲的载波频率仅有差别。左侧脉冲的载波频率比 CW 光的载波频率低 10~GHz。 b) 模拟在非线性介质中的传播后，CW 光从 XPM 得到的相移大约是 SPM 的两倍，正如公式 ~\ref{eq:XPM} 所预测的那样。$0.0360/0.0187\approx 1.925\neq2$的比率归因于公式 ~\ref{eq:XPM} 中涉及的近似值以及模拟的有限时间分辨率。这些数字是使用 \href{https://colab.research.google.com/drive/1aIRradfOZGN7JYUhbtYJdVzJwAZoYoUe?usp=sharing}{这个交互式笔记本}生成的，我们鼓励读者尝试使用。}
+    \caption{图示 SPM 和 XPM 对光信号相位的不同影响。 a) 低功率 CW 信号与两个相同的高功率高斯脉冲重叠的时域表示，这两个脉冲的载波频率仅有差别。左侧脉冲的载波频率比 CW 光的载波频率低 10~GHz。 b) 模拟在非线性介质中的传播后，CW 光从 XPM 得到的相移大约是 SPM 的两倍，正如公式 ~\ref{eq:XPM} 所预测的那样。$0.0360/0.0187\approx 1.925\neq2$的比率归因于公式 ~\ref{eq:XPM} 中涉及的近似值以及模拟的有限时间分辨率。这些数字是使用 \href{https://colab.research.google.com/drive/1aIRradfOZGN7JYUhbtYJdVzJwAZoYoUe?usp=sharing}{这个交互式NOTEBOOK}生成的，我们鼓励读者尝试使用。}
     \label{fig:XPM}
 \end{figure}
 
@@ -126,7 +126,7 @@ since
 
 \section{相位匹配}
 \label{sec:Phase_matching}
-小节~\ref{subsec:sidebands}中的推导假定色散可以忽略不计，这是小$\omega_d$值和载波频率接近小节~\ref{subsec:ZDF}中解释的零色散频率的情况。在 \href{https://youtu.be/0SXPvO89jto}{本视频教程}中解释了色散对全波调制的影响。事实证明，当 $\betag_2$ 为正值时，FWM 很弱，而当 $\betag_2$ 为负值时，FWM 最为显著。
+小节~\ref{sec:sidebands}中的推导假定色散可以忽略不计，这是小$\omega_d$值和载波频率接近小节~\ref{subsec:ZDF}中解释的零色散频率的情况。在 \href{https://youtu.be/0SXPvO89jto}{本视频教程}中解释了色散对全波调制的影响。事实证明，当 $\betag_2$ 为正值时，FWM 很弱，而当 $\betag_2$ 为负值时，FWM 最为显著。
 \begin{align}
 \label{eq:phase_matching}
 0&=\betag_2\omega_d^2+\gamma(P_a+P_b)    \\ \nonumber
@@ -141,7 +141,7 @@ since
 \begin{figure}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/MI_combined.png}
-    \caption{a) 初始和最终时间域信号功率：信号由高斯脉冲和幅度比高斯脉冲小 1.000 倍的随机噪声组成，通过具有 $\beta_2<0$ 的非线性介质传播 100m 后的情况。b) 与 a) 相同，但展示频谱。c-d) 与 a-b) 相同，但传播距离为 200m。e-f) 与 a-b) 相同，但传播距离为 300m。g) 信号在传播 500m 内的完整时间演化。h) 与 g) 相同，但展示频谱。图像由 \href{https://colab.research.google.com/drive/1p2aQZ4zPPAIMplVxvlezdmpQt_j-rsY7?usp=sharing}{此交互式笔记本} 生成，读者可以尝试使用该笔记本进行实验。}
+    \caption{a) 初始和最终时间域信号功率：信号由高斯脉冲和幅度比高斯脉冲小 1.000 倍的随机噪声组成，通过具有 $\beta_2<0$ 的非线性介质传播 100m 后的情况。b) 与 a) 相同，但展示频谱。c-d) 与 a-b) 相同，但传播距离为 200m。e-f) 与 a-b) 相同，但传播距离为 300m。g) 信号在传播 500m 内的完整时间演化。h) 与 g) 相同，但展示频谱。图像由 \href{https://colab.research.google.com/drive/1p2aQZ4zPPAIMplVxvlezdmpQt_j-rsY7?usp=sharing}{此交互式NOTEBOOK} 生成，读者可以尝试使用该NOTEBOOK进行实验。}
     \label{fig:MI}
 \end{figure}
 
