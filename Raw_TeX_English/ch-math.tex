@@ -67,7 +67,7 @@ The convention of using $\exp(i\omega t)$ in the Fourier transform as opposed to
       &= \int_{-\infty}^{\infty} e^{i\betag(\omega_0)z-i(\omega_0-\omega) t} dt \\ \nonumber
       &= e^{i\betag(\omega_0)z}\delta(\omega-\omega_0),
 \end{align} 
-shows that the Fourier transform of a complex plane wave yields a delta function centered at the positive carrier angular frequency, $\omega$. Using $\exp(-i\omega t)$ in the Fourier transform and applying it to a complex plane wave propagating in the positive z-direction would have yielded a result containing $\delta(\omega_0+\omega)$, implying that the delta function is centered at the negative carrier angular frequency. The latter approach makes accounting for the sign in calculations involving the Fourier transform of complex plane waves propagating in the z-direction more complicated. Therefore the former convention is used. 
+shows that the Fourier transform of a complex plane wave yields a delta function centered at the positive carrier angular frequency, $\omega$. Using $\exp(-i\omega t)$ in the Fourier transform and applying it to a complex plane wave propagating in the positive z-direction would have yielded a result containing $\delta(\omega_0+\omega)$, implying that the delta function is centered at the negative carrier angular frequency. The latter approach makes accounting for the sign in calculations involving the Fourier transform of complex plane waves propagating in the z-direction more error prone. Therefore the former convention is used. 
 
 \section{Pulses}
 Electromagnetic pulses with a finite duration in a medium can be viewed as an infinite sum of distinct complex plane waves as follows
@@ -92,7 +92,7 @@ If $C=0$, the phase of the field changes linearly, which implies that it oscilla
 \label{eq:chirp_definition}
     \delta\omega(T) &= -\partial_T\phi(T),
 \end{align}
-where $\phi(T)$ is the phase of the field as a function of time. The negative in front of the derivative w.r.t. time is included to ensure that the instantaneous angular frequency of a complex plane waves propagating in the z-direction, which is described by $\exp(i\beta(\omega_0)z-i\omega_0 t)$, is correctly calculated to be $+\omega_0$.
+where $\phi(T)$ is the phase of the field as a function of time. The negative in front of the derivative w.r.t. time is included to ensure that the instantaneous angular frequency of a complex plane waves propagating in the z-direction, which is described by $\exp(i\betag(\omega_0)z-i\omega_0 t)$, is correctly calculated to be $+\omega_0$.
 
 An electric field whose instantaneous frequency changes over time is said to be "chirped". Durations, where it oscillates at a frequency lower(higher) than its carrier frequency are said to be "red-chirped"("blue-chirped"). A chirp that changes from "red" to "blue", is said to be "increasing", while a chirp that changes from "blue" to "red" is said to be "decreasing". 
 

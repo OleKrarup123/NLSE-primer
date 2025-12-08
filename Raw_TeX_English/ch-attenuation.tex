@@ -11,7 +11,7 @@ When light propagates in a waveguide, such as an optical fiber, attenuation can 
 
 \section{Describing attenuation}
 
-Consider Eq.~\ref{eq:GNLSE} where all parameters except for $\alpha$ is equal to zero. In that case,
+Consider Eq.~\ref{eq:GNLSE} where all parameters except $\alpha$ are equal to zero. In that case,
 
 \begin{align}
     \label{eq:attenuation}
@@ -36,7 +36,7 @@ In Eq.~\ref{eq:GNLSE}, Eq.~\ref{eq:attenuation} and Eq.~\ref{eq:attenuation_powe
     \caption{Examples of scaling factors and corresponding changes measured in dB.}
     \label{tab:dB}
 \end{table}
-In practical applications, it's common to report attenuation or gain in units of "Decibels" (dB). For example, if a signal initially has 60~mW of power and only, 130~$\mu$W after propagating through a medium, its power has changed by
+In practical applications, it is common to report attenuation or gain in units of "Decibels" (dB). For example, if a signal initially has 60~mW of power and only 130~$\mu$W after propagating through a medium, its power has changed by
 \begin{align}
     \Delta P [dB] &= 10 \log_{10}\left(\frac{P_{final}}{P_{initial}} \right)= 10 \log_{10}\left(\frac{0.130 mW}{60 mW} \right) = -26.64 dB.
 \end{align}
@@ -47,9 +47,9 @@ Conversely, if the power is then boosted by 15dB, the new power is
 \end{align}
 
 
-Note that $10\log_{10}(10)=10$~dB, $10\log_{10}(0.1)=-10$~dB, $10\log_{10}(2)\approx3$~dB and $10\log_{10}(0.5)\approx-3$~dB. Thus, if the power is scaled up by a factor of $20=10\cdot 2$, this corresponds to an increase of $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$dB. See Tab.~\ref{tab:dB} for more examples. 
+Note that $10\log_{10}(10)=10$~dB, $10\log_{10}(0.1)=-10$~dB, $10\log_{10}(2)\approx3$~dB, and $10\log_{10}(0.5)\approx-3$~dB. Thus, if the power is scaled up by a factor of $20=10\cdot 2$, this corresponds to an increase of $10\log_{10}(10\cdot 2) = 10\log_{10}(10)+10\log_{10}(2) = 13$dB. See Tab.~\ref{tab:dB} for more examples. 
 
-The attenuation coefficient, $\alpha$ is often reported in dB/km. For example, single-mode optical fibers for telecommunications  have typical attenuation coefficients of $-0.22$dB/km near 193~THz (corresponding to approximately 1550~nm). This implies that a 100km long fiber will change the optical power by $-22$~dB, which corresponds to a reduction by a factor of approximately 158.5. If $\alpha=-0.22$dB/km, the appropriate value of $\alpha$ measured in "factors of e per km" to use in Eq.~\ref{eq:GNLSE} (assuming that $z$ is measured in units of km) can be calculated from
+The attenuation coefficient, $\alpha$, is often reported in dB/km. For example, single-mode optical fibers for telecommunications  have typical attenuation coefficients of $-0.22$dB/km near 193~THz (corresponding to approximately 1550~nm). This implies that a 100km long fiber will change the optical power by $-22$~dB, which corresponds to a reduction by a factor of approximately 158.5. If $\alpha=-0.22$dB/km, the appropriate value of $\alpha$ measured in "factors of e per km" to use in Eq.~\ref{eq:GNLSE} (assuming that $z$ is measured in units of km) can be calculated from
 \begin{align}
     \exp\left(\alpha_{\text{Factors of $e$ per km}}z\right) &= 10^{ \frac{\alpha_{dB/km}}{10}z} \\ \nonumber
     \alpha_{\text{Factors of $e$ per km}}z &= \ln\left(10^{ \frac{\alpha_{dB/km}}{10}z} \right)\\ \nonumber
@@ -60,7 +60,7 @@ The attenuation coefficient, $\alpha$ is often reported in dB/km. For example, s
 
 
 \section{Measuring power in dBm}
-The powers of optical signals are often reported in units of "dBm", which represents the power in decibels relative to "mW". For example, 40~mW corresponds to
+The powers of optical signals are often reported in units of "dBm", which represents the power in "decibels relative to mW". For example, 40~mW corresponds to
 \begin{align}
     P [dBm] &= 10\cdot\log_{10}\left(\frac{40mW}{1mW} \right)=16dBm,
 \end{align}
