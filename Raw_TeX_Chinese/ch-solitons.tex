@@ -1,44 +1,65 @@
-\chapter{异域脉冲（Exotic pulses）}
+\chapter{特殊脉冲}
 \label{ch:Exotic}
 
-对于一根光纤来说，如果$\gamma\neq 0$和$\betag_2\neq 0$，发射到光纤中的脉冲会以多种令人惊讶的方式演变。从本质上讲，非线性会根据脉冲的功率曲线改变脉冲的局部频率，而色散则会导致不同频率相对于载波频率前进或延迟，这反过来又会改变功率曲线。本章将探讨这两种效应在不同的 $\gamma$ 和 $\betag_2$ 值下的相互作用。
+对于一根满足 $\gamma\neq 0$ 且 $\betag_2\neq 0$ 的光纤，注入其中的脉冲可能会以很多出人意料的方式演化。本质上，非线性会依据脉冲功率分布改变局部频率，而色散又会让不同频率相对于载波发生超前或滞后，继而反过来改变功率分布。本章将讨论在不同 $\gamma$ 与 $\betag_2$ 取值下，这两种效应相互作用后会出现哪些现象。
 
-\section{基本孤子}
+
+\section{基孤子}
 \label{sec:soliton}
-考虑一下 $\gamma>0$ 的光纤。如图 ~\ref{fig:chirp_profiles}所示，这将导致脉冲前缘（后缘）产生红（蓝）色偏移。正如在 Sec.~\ref{sec:GVD} 中解释的那样，$\betag_2<0$ 意味着蓝光比红光传播得更快，从而导致脉冲的前缘（后缘）变得更蓝（更红）。如果根据瞬时功率曲线，$\gamma>0$ 会使脉冲的前缘（后缘）更红（蓝），而根据场的二次导数，$\betag_2<0$ 会使脉冲的前缘（后缘）更蓝（红），那么我们自然会问，是否存在一个脉冲包络，在这个脉冲包络中，这两种效应在每个瞬间都完全平衡，因此脉冲的形状在向前传播时不会改变。对于这样的脉冲，场包络应该与距离无关，而相位应该与时间无关，即
-
+考虑一根满足 $\gamma>0$ 的光纤。由图~\ref{fig:chirp_profiles} 可知，非线性会使脉冲前沿（后沿）产生红移（蓝移）。而第~\ref{sec:GVD} 节已说明：若 $\betag_2<0$，则蓝光比红光传播得更快，于是脉冲前沿（后沿）又会变得更蓝（更红）。既然 $\gamma>0$ 会根据瞬时功率分布让脉冲前部更红、后部更蓝，而 $\betag_2<0$ 又会通过场的二阶时间导数让前部更蓝、后部更红，那么自然要问：是否存在某种脉冲包络，使这两种效应在每一个时刻都精确平衡，从而脉冲形状在传播中始终保持不变？对这种脉冲来说，场包络应当与距离无关，而相位应当与时间无关，因此设
 \begin{align}
     \A(z,T) &= V(T)e^{i\phi(z)}
 \end{align}
-解方程 
+来求解
 \begin{align}
 \label{eq:NLSE_soliton}
     \partial_z\A &=  -i  \frac{\betag_2}{2}\partial_T^2\A+i\gamma|\A|^2\A.
 \end{align}
-正如\href{https://github.com/OleKrarup123/NLSE-vector-solver/blob/main/TutorialVideos/Soliton-Video/Fundamental_soliton_derivation.pdf}{此节}推导所解释的那样，可以证明解是
+如 \href{https://github.com/OleKrarup123/NLSE-vector-solver/blob/main/TutorialVideos/Soliton-Video/Fundamental_soliton_derivation.pdf}{这个推导} 所示，其解为
 \begin{align}
     \A(z,T) &= \sqrt{\frac{|\betag_2|}{\gamma T_0^2}}\cdot\text{sech}\left(\frac{T}{T_0}\right)\exp\left(i\frac{|\betag_2|}{2T_0^2}z\right),
 \end{align}
-其中，$T_0$ 是脉冲场下降到其峰值的 64.8\% 时的时间。这种以双曲正割包络为特征的稳定脉冲被称为 “基本孤子”。高斯脉冲与双曲正割脉冲的对比见图 ~\ref{fig:gauss_sech}。请注意，双曲正割脉冲的峰值功率（$\A_{max}$）必须选择为正好等于特征振幅（$\A_{char}=\sqrt{|\|betag_2|/\gamma T_0^2}$），这样才能实现稳定传播！
+其中 $T_0$ 定义为场幅降到峰值 64.8\% 时所对应的时间位置。这样一种具有双曲正割包络并能稳定传播的脉冲称为“基孤子”（fundamental soliton）。图~\ref{fig:gauss_sech} 比较了高斯脉冲与双曲正割脉冲。要形成稳定传播，双曲正割脉冲的峰值幅度 $\A_{max}$ 必须精确等于特征幅度 $\A_{char}=\sqrt{|\betag_2|/\gamma T_0^2}$；在这种情况下，$\betag_{0,NL}=|\betag_2|/2T_0^2=1/2L_D=1/2L_{NL}$。
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/gauss_sech_comparison.png}
-    \caption{高斯脉冲与双曲正割脉冲的比较，a) 为线性比例，b) 为对数比例。  }
+    \caption{高斯脉冲与双曲正割脉冲的比较。a) 线性坐标下的对比。b) 对数坐标下的对比，能更清楚地看到双曲正割脉冲尾部更强。}
     \label{fig:gauss_sech}
 \end{figure}
 \subsection{通信中的孤子}
-在接近193~THz（$\approx$1550~nm）的近红外频率的硅光纤中，由于$\gamma>0$和$\betag_2<0$，基底孤子曾一度在电信领域引起极大兴趣，因为它们的抗色散能力和恒定形状可以减少符号间干扰。然而，在小节{subsec:ZDF}中提到的电子色散补偿方面的改进同样使孤子在光纤通信中的应用过时了。取而代之的是采用所谓“\href{https://www.youtube.com/watch?v=hCk_cg-OfUQ}{root-raised-cosine}”场包络的脉冲。  
+由于石英光纤在接近 193~THz（约 1550~nm）的近红外频率附近通常满足 $\gamma>0$ 且 $\betag_2<0$，因此基孤子曾在通信中备受关注，因为它们能抵抗色散并保持脉冲形状稳定，从而减小码间干扰。不过，正如第~\ref{subsec:ZDF} 节所提到的那样，随着电子色散补偿技术的发展，用孤子来进行光纤通信已基本失去实际意义。如今更常见的是采用所谓的“\href{https://www.youtube.com/watch?v=hCk_cg-OfUQ}{根升余弦}”场包络。
 
-\section{Higher order Solitons}
-如果双曲正割脉冲的峰值功率小于 $P_{char}=|\A_{char}|^2=|\betag_2|/\gamma T_0^2$，那么与色散相比，非线性效应将过于微弱，无法形成基本孤子。因此，当脉冲向前传播时，它在时域中的范围会扩大。如果峰值功率增大到超过 $P_{char}$，脉冲在演化过程中就会出现 “振荡”。在 $\A_{max}$ 是 $\A_{char}$ 整数倍的特殊情况下，振荡孤子的演化会特别乖巧。关于 $\A_{max}=3\A_{char}$ 的孤子的时间和频谱演化示例，请参见 Fig.~\ref{fig:Soliton_comparison}~a-b)。有关光纤中孤子的更多信息，请参见 \href{https://youtu.be/KAZ7pCQ-x8Y}{本视频教程}。
-\subsection{孤子分裂}
-\label{subsec:fission}
+\section{（孤子型）色散波}
+在波导中传播的电场，其空间频率可写为
 
-基阶孤子和高阶孤子可以看作是公式 ~\ref{eq:NLSE_soliton} 的 “固定点（fixed point）”。然而，公式~\ref{eq:NLSE_soliton}本身只是公式~\ref{eq:GNLSE}的近似，而公式~\ref{eq:GNLSE}对影响光脉冲在色散和非线性介质中传播的物理学原理提供了更一般的描述。事实证明，除了 $\gamma>0$ 和 $\betag_2<0$ 之外，其他效应的存在最终会扰乱初始孤子脉冲的演化。在图 ~\ref{fig:Soliton_comparison}~c-d)中，$\betag_3>0$ 的存在会导致一个高阶孤子在传播 0.5 米的距离后，由于 FWM 而 “裂变 ”成两个较弱的新频率孤子。其他效应，如自膨胀效应、拉曼效应，甚至与理想的孤子脉冲一起传播的光噪声所引起的调制不稳定性，也同样会导致孤子裂变。因此，就像一支铅笔在笔尖上保持平衡一样，孤子传播应被视为一种不稳定的平衡。有关孤子裂变的更多详情，请参阅 \href{https://youtu.be/tHpIR2Kuxp0}{本视频教程}。
+\begin{align}
+\betag_{tot}(\omega) &= \betag_{lin}(\omega)+\betag_{NL}(\omega),
+\end{align}
+其中 $\betag_{lin}(\omega)$ 由波导结构决定，并由式~\ref{eq:beta_approx} 给出；而 $\betag_{NL}(\omega)$ 则由输入场的时间轮廓通过式~\ref{eq:SPM_freq} 决定。对一般光场来说，$\betag_{NL}(\omega)$ 并不好算；但对于在 $\betag_2<0$ 介质中传播的基孤子，$\betag_{NL}(\omega)$ 会恰好抵消式~\ref{eq:beta_approx} 中 $1/2\cdot\betag_2(\omega-\omega_0)^2$ 这一项。这其实正是“该场是孤子”的定义之一。类似第~\ref{sec:Phase_matching} 节的相位匹配思想：当多个连续波之间的空间频率组合恰好合适时，就会发生四波混频，也就是相干的功率转移。同理，一个以 $\omega_0$ 为中心的孤子场，也可能与另一频率处的连续波场相位匹配。由此产生的连续波场在文献中通常称为“色散波”（Dispersive Wave, DW）；不过叫它“孤子激发的色散波”其实更准确，因为这种连续波只有在存在孤子，或至少存在包络足够接近孤子的脉冲时才会出现。图~\ref{fig:Soliton_comparison}c) 中，这个由孤子产生的 DW 在大约 0.6~m 的位置开始显著出现，并很快落后于主脉冲：从 0.6~m 传播到 1.0~m 期间，它累计了约 1000~ps 的延迟。图~\ref{fig:Soliton_comparison}d) 则显示该色散波出现在 193.43~THz 附近。色散波出现的相位匹配频率可由
+
+\begin{align}
+\label{eq:DW}
+    \betag_{soliton}(\omega_{DW}) &= \betag_{CW}(\omega_{DW})\\
+    \betag_{0,NL}+\betag_0+\betag_1(\omega_{DW}-\omega_0) &= \betag_0+\betag_1(\omega_{DW}-\omega_0) + \frac{1}{2}\betag_2(\omega_{DW}-\omega_0)^2+\frac{1}{6}\betag_3(\omega_{DW}-\omega_0)^3+...\\
+    \betag_{0,NL}&= \frac{1}{2}\betag_2(\omega_{DW}-\omega_0)^2+\frac{1}{6}\betag_3(\omega_{DW}-\omega_0)^3+....
+\end{align}
+若进一步假设 $\betag_{0,NL}\approx 0$，且高于 $\betag_3$ 的色散项可以忽略，则
+\begin{align}
+    0&\approx \frac{1}{2}\betag_2(\omega_{DW}-\omega_0)^2+\frac{1}{6}\betag_3(\omega_{DW}-\omega_0)^3\\
+    \omega_{DW} &\approx \omega_0-3\frac{\betag_2}{\betag_3}.
+\end{align}
+因此，在这些条件下，位于 $\omega_0$ 的孤子可以把功率相干地转移到距离它 $\Delta\omega_{DW}=-3\betag_2/\betag_3$ 的某个连续波频率。由式~\ref{eq:ZDF} 可知，此时到零色散频率的偏移量是 $\Delta\omega_{ZD}=-\betag_2/\betag_3$，所以 $\Delta\omega_{DW}=3\Delta\omega_{ZD}$。关于式~\ref{eq:DW} 的图像化理解，可参考 \href{https://www.desmos.com/calculator/4zgmcegtni}{这个交互图}。类似地，若只考虑 $\betag_2<0$ 和 $\betag_4>0$，则可求得会出现两支色散波，其频率偏移为 $\Delta\omega_{DW} = \pm\sqrt{6}\Delta\omega_{ZD} = \pm \sqrt{6} \sqrt{-2\betag_2/\betag_4}\approx \pm 2.45 \sqrt{-2\betag_2/\betag_4}$。更多内容可参考 \href{https://www.youtube.com/watch?v=EQNKfDsh2Tk}{这个视频教程}。
+
+
+
+\section{高阶孤子}
+若双曲正割脉冲的峰值功率小于 $P_{char}=|\A_{char}|^2=|\betag_2|/\gamma T_0^2$，则相较于色散，非线性过弱，无法形成基孤子，脉冲只会在传播中单纯展宽。若峰值功率增大到超过 $P_{char}$，则脉冲在演化过程中会出现“振荡”。对于 $\A_{max}$ 正好是 $\A_{char}$ 整数倍的特殊情形，这种振荡式孤子演化会表现得尤为规则。图~\ref{fig:Soliton_comparison}a-b) 给出了一个满足 $\A_{max}=3\A_{char}$ 的孤子的时域与频域演化示例。关于光纤中孤子的进一步讨论，可参考 \href{https://youtu.be/KAZ7pCQ-x8Y}{这个视频教程}。
+
+
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/Soliton_comparison.png}
-    \caption{a) $N=3$ 孤子的时间演变，其中 $\A_{max}=3\A_{char}=3\sqrt{|\betag_2|/\gamma T_0^2}$。b) $N=3$ 孤子的频谱演化。） 与 a-b) 中相同的 $N=3$ 孤子的时间和光谱演变，但光纤的 $\betag_3>0$ 导致脉冲 “裂变”，从而说明了孤子传播的不稳定性。这些图是利用 \href{https://colab.research.google.com/drive/123pT-IsLWIEZY9XW3-1WzkTXfg1IEkkD?usp=sharing}{本互动笔记本}中的数值模拟生成的，我们鼓励读者进行实验。}
+    \caption{a) 一个 $N=3$ 孤子的时域演化，其中 $\A_{max}=3\A_{char}=3\sqrt{|\betag_2|/\gamma T_0^2}$。这里光纤长度恰好取为该高阶孤子的振荡周期。b) 该 $N=3$ 孤子的频谱演化。c-d) 与 a-b) 中相同的 $N=3$ 孤子，但光纤中还存在 $\betag_3>0$，导致脉冲发生“裂变”并产生色散波，从而展示了孤子传播本身的不稳定性。这些图由 \href{https://colab.research.google.com/drive/123pT-IsLWIEZY9XW3-1WzkTXfg1IEkkD?usp=sharing}{这个交互式 notebook} 的数值模拟生成。}
     \label{fig:Soliton_comparison}
 \end{figure}
 
@@ -46,45 +67,42 @@
 
 
 
-\section{光学波破裂（Optical Wave Breaking）}
-当海浪接近海滩时，水开始在波浪的前缘“堆积”，最终导致波浪在冲击海岸之前“破裂”。在非线性光纤中，当 $\gamma>0$ 且 $\betag_2>0$ 时，也可以观察到类似的现象。与第~\ref{sec:soliton}节中讨论的当 $\betag_2$ 为负时非线性和色散的平衡不同，现在它们是“协同作用”的。非线性使脉冲的前缘（后缘）变得更红（更蓝），而色散使红色（蓝色）光的传播速度比载波快（慢）。结果是任何脉冲都会在时间域迅速展宽。通常，这种展宽方式会使脉冲的前后功率逐渐“堆积”，从而导致功率斜率变陡，进而生成更大的频率调制（chirp），由于色散的影响，导致脉冲的时间展宽更加快速。当斜率变得足够陡峭时，色散会像水波崩溃一样，将新产生的频率从主脉冲中“推出”。图~\ref{fig:OWB_and_similariton}~a-b）说明了这一现象，称为“光学波破裂”（OWB）。尽管OWB对入射脉冲的变化可能是有害的，但如果想要一个具有陡峭斜率且峰值功率大致恒定的光学脉冲，它也可以是有益的。有关OWB的更多细节，请参阅\href{https://youtu.be/XEx6lOf6f40}{此视频教程}。
+\section{光学波破裂}
+海浪接近海滩时，浪前会逐渐“堆积”起来，最终发生破碎并拍向岸边。类似现象也会出现在满足 $\gamma>0$、$\betag_2>0$ 的非线性光纤中。和第~\ref{sec:soliton} 节里 $\betag_2<0$ 时“非线性与色散相互抵消”的情形不同，此时两者会“协同作用”：非线性使脉冲前沿（后沿）更红（更蓝），而色散又让红光（蓝光）比载波传播得更快（更慢）。结果就是，任何脉冲都会很快在时域中展宽。常见的情况是：脉冲前后两侧的功率逐渐堆积，形成更陡的功率斜率；更陡的斜率又产生更强的啁啾，于是色散导致更快的时域展宽。当斜率足够陡时，色散会像把水浪甩出去一样，把这些新生成的频率分量从主脉冲中“发射”出去。图~\ref{fig:OWB_and_similariton}a-b) 展示了这种被称为“光学波破裂”（Optical Wave Breaking, OWB）的现象。OWB 对输入脉冲造成的改变有时是有害的，但如果你希望获得一个边沿很陡、峰值功率又近似恒定的光脉冲，它也可能是有益的。更多内容可参考 \href{https://youtu.be/XEx6lOf6f40}{这个视频教程}。
 
-\subsection{相似孤子（Similaritons）}
-当 $\gamma>0$ 且 $\betag_2>0$ 时，OWB使脉冲在时间域扩展，从而减小其峰值功率。如果进一步假设 $\alpha>0$，意味着脉冲在传播过程中会被放大，那么这种峰值功率的损失会不断被补偿。实际上，在这种情况下，任何输入脉冲（无论其初始形状如何）都会演化为一个具有抛物形功率包络的脉冲，如图~\ref{fig:OWB_and_similariton}~c）所示，并且脉冲的调制将呈现线性变化，从前到后依次变为红色和蓝色~\cite{Similariton_evolution}。这种“相似孤子”的峰值功率和持续时间会随着传播距离的增加而不断增加，具体解释请参见\href{https://youtu.be/ZtWIRaj5VV4}{此视频教程}。相似孤子可以出现在某些光学放大器中，并且由于其线性变化的频率调制，它们是通过诺贝尔奖获得的方法——啁啾脉冲压缩——生成具有极高峰值功率脉冲的理想候选者，详细内容可见\href{https://youtu.be/Eh5CHRWFT-M}{此视频教程}。
+\subsection{相似子}
+当 $\gamma>0$ 且 $\betag_2>0$ 时，OWB 会让脉冲在时域中展宽，从而降低其峰值功率。如果再进一步有 $\alpha>0$，也就是脉冲在传播中不断被放大，那么这种峰值功率损失会被持续补回。事实证明，在这种条件下，\emph{无论输入脉冲初始形状如何}，它最终都会朝着抛物线型功率包络演化，如图~\ref{fig:OWB_and_similariton}c) 所示；同时，它还会形成一个从前沿红移到后沿蓝移的线性啁啾~\cite{Similariton_evolution}。这种“相似子”（similariton）的峰值功率和脉冲持续时间都会随传播距离持续增长，详见 \href{https://youtu.be/ZtWIRaj5VV4}{这个视频教程}。相似子会出现在某些光放大器中，其线性啁啾使它成为利用诺奖级方法“啁啾脉冲压缩”来获得极高峰值功率脉冲的理想候选，相关背景可参考 \href{https://youtu.be/Eh5CHRWFT-M}{这个视频教程}。
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{figures/OWB_and_similariton.png}
-    \caption{a)双曲正割脉冲在介质中的演变，其中$\betag_2>0$。b)与a)中相同的脉冲在介质中的演变，其中$\betag_2>0$和$\gamma>0$导致功率在脉冲前后 “堆积”，从而导致OWB。这些图是使用 \href{https://colab.research.google.com/drive/1qtMcXElXn4VBntfCgXIGGkyDfiGicElx?usp=sharing}{本互动笔记本}中的数值模拟生成的，我们鼓励读者进行实验。}
+    \caption{a) 双曲正割脉冲在满足 $\betag_2>0$ 的介质中传播时的演化。b) 在与 a) 相同的介质中再加入 $\gamma>0$ 后，脉冲前后会出现功率堆积，从而触发 OWB。c) 在 b) 的条件上再加入 $\alpha>0$，一个三角脉冲会逐渐演化为抛物线形状。这些图由 \href{https://colab.research.google.com/drive/1qtMcXElXn4VBntfCgXIGGkyDfiGicElx?usp=sharing}{这个交互式 notebook} 的数值模拟生成。}
     \label{fig:OWB_and_similariton}
 \end{figure}
 
-\section{新型孤子}
 
-\subsection{暗孤子（Dark Solitons）}
-通常，光脉冲由突然增加的激光功率组成，前后则是长时间零功率。肉眼看到的脉冲就像是在黑暗的房间里，灯被短暂地打开一样。只要满足第~\ref{sec:soliton}节中描述的条件，这样的脉冲可以稳定地通过非线性介质传播。我们可以考虑在非线性介质中，所谓的“反脉冲”——一个高功率的连续波（CW）信号，经历一个短暂的功率下降，类似于灯短暂熄灭后再被重新点亮。它将由功率下降的前沿和功率上升的后沿组成。如果 $\gamma>0$ 且 $\betag_2>0$，前沿（后沿）会变得更蓝（更红），使得这部分光传播速度变慢（加速）。类似于第~\ref{sec:soliton}节的情况，可以计算出非线性和色散恰好平衡的场包络是一个双曲正切函数，从而形成一个稳定传播的“暗孤子”，其表达式为：
-
+\section{新的孤子类型}
+\subsection{暗孤子}
+通常说的光脉冲，是在长时间零功率背景前后夹着一段突然升高的激光功率；肉眼看去，就像在黑暗房间里灯突然闪亮一下。若满足第~\ref{sec:soliton} 节中的条件，这样的脉冲就可以在非线性介质中稳定传播。反过来，再想一种“反脉冲”：在高功率连续波背景上出现一个短暂的功率凹陷，类似一盏亮着的灯短暂熄灭了一下又重新亮起。它由一个下降的前沿和一个上升的后沿构成。若 $\gamma>0$ 且 $\betag_2>0$，则前沿（后沿）会更蓝（更红），从而导致这些位置的光分别变慢（变快）。和第~\ref{sec:soliton} 节类似，可以求得使非线性与色散恰好抵消的包络形状是双曲正切，因此可得到稳定传播的“暗孤子”：
 \begin{align}
     \A(z,T) = \A_{char}\tanh\left(\frac{T}{T_0}\right)\exp\left(i\frac{|\betag_2|}{T_0^2}z \right).
 \end{align}
+关于暗孤子的更多内容，可参考 \href{https://youtu.be/MrNfI1_eTZ0}{这个视频教程}。
 
-有关暗孤子的更多信息，请参见\href{https://youtu.be/MrNfI1_eTZ0}{此视频教程}。
 
-\subsection{拉曼孤子（Raman Solitons）}
-如果拉曼效应存在，并且脉冲谱向较低频率移动，那么在 $\betag_2<0$ 的非线性介质中可以形成一个“拉曼孤子”。这个孤子保持其包络的形状，但会经历一个恒定的红移，并由于 $\betag_2<0$ 使得红光比蓝光传播得更慢，进而产生越来越大的时间延迟，如图~\ref{fig:dark_and_raman}c-d）所示。拉曼孤子通常出现在脉冲的孤子裂变之后，这些脉冲的持续时间通常在几十飞秒的量级。有关拉曼孤子的解释，请参见\href{https://www.youtube.com/watch?v=K33YUfegL1w}{此视频教程}。
+\subsection{拉曼孤子}
+如果在一个满足 $\betag_2<0$ 的非线性介质中还存在拉曼效应，那么后者会把脉冲频谱持续推向低频端，于是可能形成“拉曼孤子”。这种孤子的包络形状依旧保持稳定，但它会持续发生红移，并且由于 $\betag_2<0$ 意味着红光比蓝光传播得更慢，因此它还会积累越来越大的时间延迟，如图~\ref{fig:dark_and_raman}c-d) 所示。拉曼孤子常常出现在持续时间为几十飞秒的脉冲经历孤子裂变之后。关于拉曼孤子，可参考 \href{https://www.youtube.com/watch?v=K33YUfegL1w}{这个视频教程}。
 
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures/dark_and_raman_soliton_combined.png}
-    \caption{a) 基本暗孤子在介质中稳定传播，其中 $\betag_2>0$ 和 $\gamma>0$. b) 一个 N=3 的暗孤子在介质中传播，与 a 中相同。c) 一个 N=3 的孤子在$\betag_2<0$和$\gamma>0$的介质中传播。 d) 与 c) 中相同的脉冲在相同的介质中传播，除了公式 ~\ref{eq:raman_basic} 所描述的拉曼效应被考虑在内，导致孤子裂变并产生一个自漂移拉曼孤子。这些图是使用 \href{https://colab.research.google.com/drive/1qtMcXElXn4VBntfCgXIGGkyDfiGicElx?usp=sharing}{这个互动笔记本}生成的，我们鼓励读者进行实验。}
+    \caption{a) 基暗孤子在满足 $\betag_2>0$ 与 $\gamma>0$ 的介质中稳定传播。b) 一个 $N=3$ 的暗孤子在与 a) 相同的介质中传播时，不再保持稳定，而是由中央凹陷生成了更多凹陷。c) 一个 $N=3$ 孤子在满足 $\betag_2<0$ 与 $\gamma>0$ 的介质中传播。d) 在与 c) 相同的条件下，再加入由式~\ref{eq:raman_basic} 描述的拉曼效应后，脉冲发生孤子裂变，并产生一个自发红移的拉曼孤子。这些图由 \href{https://colab.research.google.com/drive/1qtMcXElXn4VBntfCgXIGGkyDfiGicElx?usp=sharing}{这个交互式 notebook} 的数值模拟生成。}
     \label{fig:dark_and_raman}
 \end{figure}
 
-\subsection{矢量孤子（Vector Solitons）}
-在第~\ref{Sec:XPM}节中，已经展示了不同频率的光可以通过非线性效应相互影响相位。同样，在非线性介质中，两种不同的光偏振也可以相互影响相位。通过使用方程~\ref{eq:GNLSE} 的矢量版本，其中 $\gamma>0$，$\betag_2<0$，且介质中光沿 x 和 y 轴的折射率不同，可以得到所谓的“矢量孤子”的解析表达式。对于这些情况，孤子的特殊情况是圆偏振光和偏振方向为 $45^{o}$ 的线性偏振光~\cite{AGRAWAL_CH6_POL}。
+\subsection{矢量孤子}
+第~\ref{Sec:XPM} 节已经表明，不同频率的两束光可以通过非线性相互影响彼此的相位。类似地，在非线性介质中传播的两种不同偏振态的光，也会彼此影响相位。若采用矢量形式的式~\ref{eq:GNLSE}，并假设 $\gamma>0$、$\betag_2<0$，且介质对沿 $x$ 轴和 $y$ 轴偏振的光具有不同折射率，那么就可以导出所谓“矢量孤子”的解析表达式。能够得到解析解的特殊情形包括圆偏振光，以及相对于 $x$ 轴以 $45^o$ 线偏振的光~\cite{AGRAWAL_CH6_POL}。
 
-
-
-
-
-
+\subsection{孤子裂变}
+\label{subsec:fission}
+基孤子和高阶孤子都可以看作式~\ref{eq:NLSE_soliton} 的“固定点”。但式~\ref{eq:NLSE_soliton} 本身只是对式~\ref{eq:GNLSE} 的一个近似，而后者才更全面地描述了色散非线性介质中光脉冲传播所受的物理作用。事实表明，只要除了 $\gamma>0$ 与 $\betag_2<0$ 之外还存在其他效应，最初具有孤子性质的脉冲最终都会偏离孤子演化。图~\ref{fig:Soliton_comparison}c-d) 中，$\betag_3>0$ 的存在使高阶孤子在传播 0.5~m 后裂变成两个功率更低、频率不同的新脉冲。类似地，自陡峭化、拉曼效应，甚至与一个原本理想的孤子脉冲一同传播的光学噪声所触发的调制不稳定性，也都可能引发孤子裂变。因此，孤子传播更应被看作一种不稳定平衡，正如一支笔竖在笔尖上时那样。更多内容可参考 \href{https://youtu.be/tHpIR2Kuxp0}{这个视频教程}。
