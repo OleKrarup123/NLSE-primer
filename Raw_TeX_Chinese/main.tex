@@ -1,42 +1,40 @@
 \documentclass[
-  normalmargins,
+  UTF8,
   10pt,
   openany,
-  onehalfspacing,
-  UTF8
-]{my-format}
-% packages
-\usepackage{ctex}
-\usepackage[colorlinks]{hyperref} % for links
+  punct=plain
+]{ctexbook}
+
+\usepackage[a4paper,top=1in,bottom=1in,inner=1.5in,outer=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[colorlinks]{hyperref}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{acro}
-\usepackage{fancyhdr} 
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \input{Acronyms}
-\usepackage[many]{tcolorbox}    	% for COLORED BOXES (tikz and xcolor included)
+\usepackage[many]{tcolorbox}
 \newtcolorbox{boxA}{
     fontupper = \bf,
     boxrule = 1.5pt,
-    colframe = black % frame color
+    colframe = black
 }
-\newcommand{\A}{\textcolor{red}{A}} 
-\newcommand{\E}{\textcolor{red}{E}} 
+\newcommand{\A}{\textcolor{red}{A}}
+\newcommand{\E}{\textcolor{red}{E}}
 \newcommand{\greencheck}{\textcolor{green}{\checkmark}}
 \newcommand{\redcross}{\textcolor{red}{x}}
-
-
-\newcommand{\betag}{\textcolor{ForestGreen}{\beta}} 
-\newcommand{\CITE}{\textcolor{magenta}{CITE?!?!?!?!?!}} 
+\newcommand{\betag}{\textcolor{ForestGreen}{\beta}}
+\newcommand{\CITE}{\textcolor{magenta}{CITE?!?!?!?!?!}}
 \newcommand{\real}{\mathfrak{Re}}
 \newcommand{\FT}{\mathfrak{F}}
 \newcommand{\IFT}{\mathfrak{F}^{-1}}
 
-
-
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{graphicx} % for embedding graphics
-\usepackage{booktabs} % for pretty tables
+\usepackage{graphicx}
+\usepackage{booktabs}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18,width=11cm}
 \usetikzlibrary{math}
@@ -51,60 +49,59 @@
 \newcommand{\degs}{^{\circ}}
 \newcommand{\inv}{$^{-1}$}
 
-
-% author data
 \author{Ole Krarup}
 \title{\Large 非线性薛定谔方程简明教程}
 \date{}
 
 \begin{document}
- 
-  \frontmatter    
-        
-    \maketitle
-    \begin{center}
-        \text{\Large 很惭愧，只做了一点微小的贡献}
-    \end{center}
-    \begin{flushright}
-      \text{\Large 翻译：蓝睿博}
-    \end{flushright}
-    \begin{flushright}
-      \text{\Large 2024年，南京}
-    \end{flushright}
-    \addtocounter{page}{1}
-    
-   
-   
-    \addcontentsline{toc}{chapter}{Table of Contents}
-    \tableofcontents
-    
-    \listoffigures
-    \listoftables
-    
-    %\input{AcronymList}
-    %\printacronyms
-    %\addcontentsline{toc}{chapter}{List of Acronyms}
-    
-    \mainmatter
-    
-    \pagestyle{plain}
-    \input{ch-intro}
-    \input{ch-math}
-    \input{ch-attenuation}
 
-    \input{ch-dispersion}
-    \input{ch-spm}
-    \input{ch-FWM}
-    \input{ch-Raman}
+\frontmatter
 
-    \input{ch-solitons}
-    \input{ch-supercontinuum}
-    \input{ch-material}
-    
-  %\appendix
-    %\input{ap-code}
-  \backmatter
-  \bibliographystyle{unsrturl}%plainurl
-  \bibliography{refs.bib}
-  
+\maketitle
+\addtocounter{page}{1}
+
+\chapter*{译者的话}
+\addcontentsline{toc}{chapter}{译者的话}
+
+这份中文稿是在Dr. Ole Krarup的英文原版 \LaTeX{} 文档基础上完成的整理与翻译，目标是尽可能保留原书的结构、公式、图表、引用关系和论述逻辑，同时把正文表达调整为更符合中文阅读习惯的形式。
+
+不过，这份译稿并不能代替英文原文。若读者在某些段落、术语或推导细节上感到含义模糊，应优先对照英文原文，并以原文为准。译者所做的工作主要是文本转换、结构同步与可读性整理，而不是对原文内容进行学术性重写。翻译过程中仍可能引入新的问题，例如术语选择不够稳定、句法理解出现偏差，甚至在极少数地方误解原文逻辑。对于这些问题，译者愿意承担责任，但也希望读者在使用本书时保持审慎，尤其是在把其中公式、定义或物理结论直接用于研究、教学或正式写作时。
+
+如果这份译稿能够帮助中文读者更快进入 NLSE 及相关非线性光学现象的语境，那么它的目的就已经达到了。也欢迎读者在阅读过程中标出不顺、可疑或明显错误之处，以便后续继续修订（联系方式：Ruibolan@outlook.com）。
+
+最后，译者鼓励大家积极学习英语。在3年硕士生活中，对我帮助最大的不是学术上的专业知识，而是英语能力的提升，让我得以打开眼界，学习这个世界上最优质丰富的开放教育资源。无论是原版教材、经典论文，还是最新的研究进展，绝大多数都以英语为载体。即使是这份中文译稿，也无法完全脱离对英文原文的依赖。只有具备了足够的英语能力，才能真正理解和运用这些知识，而不是被翻译过程中的不确定性所限制。
+
+\begin{flushright}
+译者：蓝睿博\\
+2026年3月11日，南京
+\end{flushright}
+
+\addcontentsline{toc}{chapter}{目录}
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+%\input{AcronymList}
+%\printacronyms
+%\addcontentsline{toc}{chapter}{List of Acronyms}
+
+\mainmatter
+
+\pagestyle{plain}
+\input{ch-intro}
+\input{ch-math}
+\input{ch-attenuation}
+\input{ch-dispersion}
+\input{ch-spm}
+\input{ch-FWM}
+\input{ch-Raman}
+\input{ch-solitons}
+\input{ch-supercontinuum}
+\input{ch-material}
+
+\backmatter
+\bibliographystyle{unsrturl}
+\bibliography{refs.bib}
+
 \end{document}

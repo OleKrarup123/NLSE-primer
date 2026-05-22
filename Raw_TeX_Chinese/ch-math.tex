@@ -1,125 +1,118 @@
-\chapter{数学和理论}
+\chapter{数学与理论}
 \label{ch:MathAndTheory}
 
-本章介绍描述电磁波和理解方程~\ref{eq:GNLSE} 所需的基本数学工具。
+本章介绍描述电磁波以及理解式~\ref{eq:GNLSE} 所需的基本数学工具。
 
-\section{实数场和复数场}
+
+\section{实场与复场}
 %Explain that the real field is what determines how an electron moves and that the complex one is only used for mathematical convenience when dealing with phase shifts.
-带电荷$q$、质量$m$的粒子在电场 $\Bar{\E}_r = \E_r \hat{x}$ 作用下的加速度为
+一个电荷为 $q$、质量为 $m$ 的粒子若处于电场 $\Bar{\E}_r=\E_r \hat{x}$ 中，其加速度为
 \begin{align}
     \Bar{a} &=  \frac{q\E_r}{m}\hat{x}.
 \end{align}
-电场下标$r$表示这是“实”电场，它决定了带电粒子的加速度。而“复”电场则是一种数学工具，使得涉及电磁波的计算更为简便，并且可以始终从中恢复出实电场。例如，传播在体介质中的实电场波，其空间角频率 $\betag$ 依赖于时间角频率 $\omega$，可以表示为：\begin{align}
+电场上的下标 $r$ 表明这是真实的“实电场”，它决定带电粒子究竟如何加速。相比之下，“复电场”只是一个数学工具，它能让涉及电磁波的计算更容易处理，而实电场总能从复电场中恢复出来。举例来说，在体介质中传播的实电场波，如果其空间角频率 $\betag$ 依赖于时间角频率 $\omega$，则可以写成
+\begin{align}
 \label{eq:real_field}
-    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \\\nonumber 
-     &=|\E_0| \real\left\{  \exp\left( i\betag(\omega)z-i\omega t+i\phi \right) \right\} \\ \nonumber 
+    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \\\nonumber
+     &=|\E_0| \real\left\{  \exp\left( i\betag(\omega)z-i\omega t+i\phi \right) \right\} \\ \nonumber
      &= \real\left\{ \E_0 \exp\left( i\betag(\omega)z-i\omega t\right) \right\}  \\ \nonumber
      &= \real\left\{ \E(z,t) \right\}  \\ \nonumber
-     &=  \frac{1}{2}\left( \E(z,t) + \E^*(z,t) \right).   
+     &=  \frac{1}{2}\left( \E(z,t) + \E^*(z,t) \right).
 \end{align}
-关于方程 \ref{eq:real_field} 的说明，请参见 \href{https://www.desmos.com/calculator/fgvozursrl}{此交互式图表}。
-使用复电场在模拟相位变化和干涉效应时非常方便。例如，要在实际电场中引入相位移 $\phi_0$，必须通过以下方式“手动插入”：\begin{align}
+关于式~\ref{eq:real_field} 的图像化说明，可参考 \href{https://www.desmos.com/calculator/fgvozursrl}{这个交互图}。
+
+在建模相位变化和干涉时，使用复电场尤其方便。比如，要给实电场引入一个相移 $\phi_0$，就必须“手动”把它写进余弦函数：
+\begin{align}
 \label{eq:insert_phase}
-    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \Rightarrow \\ \nonumber \E_r'(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi+\phi_0^{\textcolor{Red}{\swarrow}}\right).   
+    \E_r(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi\right) \Rightarrow \\ \nonumber \E_r'(z,t) &= |\E_0|\cos\left(\betag(\omega)z-\omega t+\phi+\phi_0^{\textcolor{Red}{\swarrow}}\right).
 \end{align}
-使用复电场，相同的操作可以通过复数乘法来完成，因为
+而在复场表示中，同样的操作只需做一次复数乘法，因为
 \begin{align}
 \label{eq:insert_phase_complex}
     \E(z,t) &=\E_0 \exp\left( i\betag(\omega)z-i\omega t+ i\phi\right)\Rightarrow \\ \nonumber \E'(z,t) &=  \E_0 \exp\left( i\betag(\omega)z-i\omega t +i\phi\right)\exp\left( i\phi_0\right) \\ \nonumber
     &=\E_0 \exp\left( i\betag(\omega)z-i\omega t +i\phi+ i\phi_0\right) \\ \nonumber
-    \E_r'(z,t) &= \real\left\{  \E'(z,t)   \right\}. 
+    \E_r'(z,t) &= \real\left\{  \E'(z,t)   \right\}.
 \end{align}
 
-此外，由于振荡的实电场的瞬时功率与其平方成正比，平均功率可以通过积分计算或通过复电场绝对值平方的一半来计算，
+此外，由于振荡实电场的瞬时功率与其平方成正比，因此一个周期内的平均功率既可以通过积分求得，也可以直接由复电场绝对值平方的一半得到：
 \begin{align}
 \label{eq:average_power}
     \langle \E_r^2 \rangle_T&= \frac{1}{T}\int_{0}^{T} \E_r^2 dt = \langle\real\left\{\E\right\}^2\rangle_T =\frac{1}{4}\langle\left(\E+\E^*\right)^2\rangle_T\\ \nonumber
 &=\frac{1}{4}\langle \E^2+\E^{*2}+2|\E|^2 \rangle_T=\frac{1}{2} \langle|\E|^2\rangle_T=\frac{1}{2}|\E|^2.
 \end{align}
-使用复电场替代“手动插入”和积分的便利性足以使得采用复电场进行计算并仅在必要时提取实电场变得值得。因此，本简介主要利用复电场，但强调这些仅是有用的数学抽象，而实电场具有物理意义，因为它们直接决定了电荷的加速。
-\subsection{实际电场和电场包络}
-无线电信号用于Wi-Fi的载波频率约为5 GHz，而最先进的示波器可以测量频率高达100 GHz的电场。相比之下，激光脉冲的电场通常在100 THz以上的载波频率下振荡。因此，以实际复电场 \(\E(z,t) = \E_0 \exp\left( i\betag(\omega_0)z - i\omega_0 t\right)\) 进行计算和表达结果往往不够方便，因为以 \(\omega_0/2\pi\) 次每秒发生的快速电场振荡实际上是无法检测到的。相反，我们可以将复电场的包络定义为
+既然复场表示既能避免“手动插入”相位，也能省去显式积分，那么在多数计算中直接使用复电场，并只在必要时取其实部，是非常划算的。因此，本教程主要使用复场表述；但也始终强调，这只是便于计算的抽象，而真正具有物理意义的是实电场，因为它才直接决定电荷的运动。
+
+\subsection{实际电场与电场包络}
+Wi-Fi 所用无线信号的载波频率大约是 5~GHz，而先进示波器大约能测到 100~GHz 的电场振荡。相比之下，激光脉冲的电场通常在 100~THz 以上的载波频率振荡。因此，直接用实际复电场 $\E(z,t)=\E_0 \exp\left( i\betag(\omega_0)z-i\omega_0 t\right)$ 来做计算或展示结果往往并不方便，因为这种每秒振荡 $\omega_0/2\pi$ 次的快速变化本来就无法被直接探测。于是，我们通常定义复电场的包络为
 \begin{align}
 \label{eq:envelope}
     \A(z,t) &=a\cdot\E(z,t)\cdot e^{-i(\betag(\omega_0)z-\omega_0t)},
 \end{align}
-并用它进行计算。在这里，\( a = \sqrt{0.5 \epsilon_0 n c A_{eff}} \)，其中 \(\epsilon_0\) 是真空的介电常数，\( n \) 是介质的折射率，\( c \) 是光速，\( A_{eff} \) 是光场横截面的有效面积，是一个归一化常数。将 \(\E\) 按 \( a \) 缩放确保 \(\A\) 具有 \(\sqrt{W}\) 的单位，因此 \( |\A|^2 \) 具有 \( W \) 的单位。通过“提取”快速且不可检测但又是\emph{可预测的}时间和空间振荡，确定电场由于线性和非线性效应而\emph{变化}的方式变得更加简单。有关 \(\E\) 和 \(\A\) 之间差异的示例，请参见此 \href{https://www.desmos.com/calculator/rsw2fn5af6}{交互式图表}。
+并以它作为计算对象。其中 $a=\sqrt{0.5\epsilon_0ncA_{eff}}$，$\epsilon_0$ 为真空介电常数，$n$ 为介质折射率，$c$ 为光速，$A_{eff}$ 为光场横截面的有效面积，它们共同给出了归一化因子。用 $a$ 去缩放 $\E$ 可以保证 $\A$ 的量纲是 $\sqrt{W}$，从而 $|\A|^2$ 的量纲就是 $W$。通过把快速、不可直接探测、但又\emph{可预知}的时间和空间振荡“提取”出去，分析电场因线性和非线性效应而发生的\emph{变化}就会容易得多。关于 $\E$ 与 $\A$ 差别的示意，可见 \href{https://www.desmos.com/calculator/rsw2fn5af6 }{这个交互图}。
 
 
-\section{傅立叶变换}
-%Define the Fourier Transform so going from time to frequency and back is well-behaved. 
 
-在本教程中，傅里叶变换及其逆变换被定义为：
+\section{傅里叶变换}
+%Define the Fourier Transform so going from time to frequency and back is well-behaved.
+
+在本教程中，傅里叶变换及其逆变换定义为
 \begin{align}
     \Tilde{\E}(z,\omega) &= \FT\left\{\E(z,t)\right\} = \int_{-\infty}^{\infty} \E(z,t) e^{i\omega t} dt, \\ \nonumber
     \E(z,t) &= \IFT\left\{\Tilde{\E}(z,\omega)\right\} = \frac{1}{2\pi} \int_{-\infty}^{\infty} \Tilde{\E}(z,\omega) e^{-i\omega t} d\omega.
 \end{align}
-使用 $\exp(i\omega t)$ 的傅里叶变换约定，而不是 $\exp(-i\omega t)$，是因为沿着正 z 方向传播的复平面波由 $\exp(i\betag(\omega_0)z-i\omega_0 t)$ 描述。因此，计算，
+这里选择在傅里叶变换中使用 $\exp(i\omega t)$，而不是 $\exp(-i\omega t)$，是因为沿正 $z$ 方向传播的复平面波写作 $\exp(i\betag(\omega_0)z-i\omega_0 t)$。于是有
 
 \begin{align}
     \FT\left\{\exp(i\betag(\omega_0)z-i\omega_0 t)\right\} &= \int_{-\infty}^{\infty} e^{i\betag(\omega_0)z-i\omega_0 t} e^{i\omega t} dt, \\ \nonumber
       &= \int_{-\infty}^{\infty} e^{i\betag(\omega_0)z-i(\omega_0-\omega) t} dt \\ \nonumber
       &= e^{i\betag(\omega_0)z}\delta(\omega-\omega_0),
-\end{align} 
-显示复平面波的傅里叶变换产生一个以正载波角频率 $\omega$ 为中心的 δ 函数。如果在傅里叶变换中使用 $\exp(-i\omega t)$ 并将其应用于沿正 z 方向传播的复平面波，结果将包含 $\delta(\omega_0+\omega)$，这意味着 δ 函数是以负载波角频率为中心的。后一种方法使得在涉及沿 z 方向传播的复平面波的傅里叶变换的计算中更复杂，因此采用前一种约定。
+\end{align}
+这说明复平面波的傅里叶变换会在正的载波角频率 $\omega_0$ 处产生一个 delta 函数。如果反过来采用 $\exp(-i\omega t)$ 的定义，那么对沿正 $z$ 方向传播的复平面波做变换时就会出现 $\delta(\omega_0+\omega)$，意味着 delta 函数会落在负载波频率上。对于涉及沿 $z$ 方向传播复平面波的推导，这种写法更容易在符号上出错，因此这里采用前一种约定。
 
 \section{脉冲}
-在介质中具有有限持续时间的电磁脉冲可以视为一组不同的复平面波的无限和，如下所示：
+在介质中持续时间有限的电磁脉冲，可以看成无穷多个不同复平面波的叠加：
 \begin{align}
     \label{eq:pulse}
     \E(z,t) &= \frac{1}{2\pi}\int_{-\infty}^{\infty} |\Tilde{\E}(z,\omega)| e^{i\betag(z,\omega)z-i\omega t+i\phi(z,\omega)} d\omega \\ \nonumber
     \E(z,t) &= \frac{1}{2\pi}\int_{-\infty}^{\infty} \Tilde{\E}(z,\omega) e^{i\betag(z,\omega)z-i\omega t} d\omega.
 \end{align}
-方程~\ref{eq:pulse} 提供的关键见解是，光信号的强度、形状和颜色的任何变化都必须源于改变一组时间频率分量的幅度 $|\Tilde{\E}(z,\omega)|$、相位 $\phi(z,\omega)$ 或空间频率 $\betag(z,\omega)$。即使是非线性效应，这些效应可以以令人惊讶的方式改变激光脉冲，本质上也只不过是改变这三个参数。
+式~\ref{eq:pulse} 的关键启发在于：一个光信号在强度、形状和颜色上的任何变化，都必然来自于改变构成它的时间频率分量的振幅 $|\Tilde{\E}(z,\omega)|$、相位 $\phi(z,\omega)$，或者空间频率 $\betag(z,\omega)$。即便是那些看起来很“神奇”的非线性效应，本质上也不过是在改动这三样东西。
 
 
-\section{啁啾和延迟}
+
+\section{啁啾与延迟}
 %Highlight that how the phase changes with time determines instantaneous frequency, which is super important for understanding pulse evolution. Explain that the change in phase w.r.t. frequency determines the time shift for each frequency.
-考虑在 $z=0$ 处给出的复电场
-
+考虑在 $z=0$ 处的复电场
 \begin{align}
 \label{eq:chirp_example}
     a\E(t) &= \A(t)\exp\left(  -i\left(\omega_0 +\frac{C}{2}T \right)T   \right).
 \end{align}
-
-如果 $C=0$，电场的相位线性变化，这意味着它以固定的载波频率 $\omega_0$ 振荡。如果 $C>0$，方程~\ref{eq:chirp_example} 表明载波频率会随时间增加，而 $C<0$ 则意味着载波频率会降低。请参见 \href{https://www.desmos.com/calculator/gd7s8nhfdn}{这个互动图} 以获取说明。电场的“瞬时角频率”定义为
-
+如果 $C=0$，那么电场相位随时间线性变化，对应固定的载波频率 $\omega_0$。若 $C>0$，式~\ref{eq:chirp_example} 表明载波频率会随时间升高；若 $C<0$，则说明载波频率会随时间降低。可以参考 \href{https://www.desmos.com/calculator/gd7s8nhfdn}{这个交互图}。电场的“瞬时角频率”定义为
 \begin{align}
 \label{eq:chirp_definition}
     \delta\omega(T) &= -\partial_T\phi(T),
 \end{align}
+其中 $\phi(T)$ 是场的相位随时间的函数。时间导数前的负号是为了保证对沿 $z$ 方向传播、写作 $\exp(i\betag(\omega_0)z-i\omega_0 t)$ 的复平面波计算瞬时角频率时，结果能正确得到 $+\omega_0$。
 
-其中 $\phi(T)$ 是电场的相位随时间的函数。负号在时间导数前面是为了确保沿 z 方向传播的复平面波的瞬时角频率被正确计算为 $+\omega_0$，其表达式为 $\exp(i\beta(\omega_0)z-i\omega_0 t)$。
+若一个电场的瞬时频率会随时间变化，就称该场带有“啁啾”。当某一时刻的频率低于（高于）载波频率时，可称该处为“红啁啾”（“蓝啁啾”）。如果啁啾从“红”逐渐变到“蓝”，就称其为“递增啁啾”；反之，从“蓝”变到“红”则称为“递减啁啾”。
 
-瞬时频率随时间变化的电场被称为“啁啾”。在频率低于（高于）其载波频率的时间段称为“红啁啾”（“蓝啁啾”）。从“红色”变为“蓝色”的啁啾称为“增加”，而从“蓝色”变为“红色”的啁啾称为“减少”。
+理解“同一个已知电场的不同时间位置可以具有不同瞬时频率”，并且知道这些频率可以通过式~\ref{eq:chirp_definition} 中对相位取负时间导数得到，对于理解许多线性和非线性效应都非常关键。举例来说，如果某种介质中的光速使得高频光（也就是“更蓝”的光）比低频光（“更红”的光）传播更快，那么一个脉冲在该介质中传播时，其前沿会形成蓝啁啾，而后沿会形成红啁啾。
 
-理解已知电场的不同持续时间可以具有不同的瞬时频率，并且这些频率可以通过计算相位的负导数从方程~\ref{eq:chirp_definition} 中获得，对于理解许多线性和非线性效应至关重要。例如，如果某一介质中的光速使得高频（即“更蓝”的频率）比低频（即“更红”的频率）传播得更快，那么通过这种材料传播的光脉冲将在前面形成蓝啁啾，而在后面形成红啁啾。
-
-正如对时间相位的导数可以提供有关瞬时频率的信息一样，可以对光谱相位关于频率的导数进行计算，以确定特定频率的时间延迟。考虑在 $z=0$ 处给出的复电场包络的光谱
-
+类似地，时间相位对时间求导给出瞬时频率，频谱相位对频率求导则能告诉我们不同频率分量的时间延迟。考虑在 $z=0$ 处复包络的频谱
 \begin{align}
 \label{eq:spectrum_time_example}
     \Tilde{\A}(\omega) &= \Tilde{\A}_0(\omega)\exp\left( i\left(\frac{B}{2}(\omega-\omega_0)^2 \right)   \right).
 \end{align}
-
-假设 $B>0$，方程~\ref{eq:spectrum_time_example} 表明围绕载波角频率 $\omega_0$ 的频率分量的相位随着与载波的距离增加而以二次形式增加。或者，可以将方程~\ref{eq:spectrum_time_example} 解释为：对于 $\omega_0$ 以下的角频率，相位 \emph{减少}，而对于 $\omega_0$ 以上的角频率，相位 \emph{增加}。受方程~\ref{eq:chirp_definition} 启发，我们可以计算
+假设 $B>0$，式~\ref{eq:spectrum_time_example} 表明围绕载波角频率 $\omega_0$ 的频率分量，其相位会随着偏离载波的程度二次增长。换个角度说：对于低于 $\omega_0$ 的角频率，相位随频率增加而\emph{下降}；而对于高于 $\omega_0$ 的角频率，相位则随频率增加而\emph{上升}。受式~\ref{eq:chirp_definition} 启发，我们定义
 
 \begin{align}
 \label{eq:delay_definition}
     \delta t(\omega) &= \partial_\omega\phi(\omega),
 \end{align}
-
-对于方程~\ref{eq:spectrum_time_example}，得出
-
+代入式~\ref{eq:spectrum_time_example} 可得
 \begin{align}
     \delta t(\omega) &=  B(\omega-\omega_0),
 \end{align}
+这表明低于 $\omega_0$ 的频率分量会获得负的时间位移（即更早到达），而高于 $\omega_0$ 的频率分量会获得正的时间位移（也就是延迟）。需要注意的是，在式~\ref{eq:delay_definition} 中无需再额外改符号即可保持一致性。
 
-这表明 $\omega_0$ 以下的角频率经历负时间延迟（使其更早到达），而 $\omega_0$ 以上的角频率经历正时间延迟（相当于延迟）。请注意，在方程~\ref{eq:delay_definition} 中没有需要改变符号的要求以保持一致。
-
-与方程~\ref{eq:chirp_definition} 相比，方程~\ref{eq:delay_definition} 对于计算的实用性较差，但有关相位随角频率的降低意味着提前到达时间，而相位随角频率的增加意味着延迟到达的见解在分析第~\ref{ch:Dispersion} 章中色散的影响时是有帮助的。有关改变光谱相位与时间延迟之间关系的说明，请参见 \href{https://youtu.be/E3S0BQiy3p8}{此视频教程}。
-
-
-
-
-
+与式~\ref{eq:chirp_definition} 相比，式~\ref{eq:delay_definition} 在实际计算中不那么常用；但“相位随角频率减小意味着提前到达，相位随角频率增大意味着延后到达”这一认识，在第~\ref{ch:Dispersion} 章分析色散时非常有帮助。关于谱相位变化与时间延迟关系的图示，可参考 \href{https://youtu.be/E3S0BQiy3p8}{这个视频教程}。
